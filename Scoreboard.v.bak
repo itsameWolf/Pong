@@ -1,0 +1,5 @@
+module Scoreboard #(
+	parameter	INPUT_LENGTH = 8,
+	parameter	N_DIGITS = 2
+	)(
+	input 

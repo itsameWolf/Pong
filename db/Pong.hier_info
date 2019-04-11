@@ -1,0 +1,135 @@
+|Scoreboard
+binary[0] => binary[0].IN1
+binary[1] => binary[1].IN1
+binary[2] => binary[2].IN1
+binary[3] => binary[3].IN1
+binary[4] => binary[4].IN1
+binary[5] => binary[5].IN1
+binary[6] => binary[6].IN1
+binary[7] => binary[7].IN1
+clock => clock.IN1
+update => update.IN1
+score[0] <= Display7Segment:Digit0.N_out
+score[1] <= Display7Segment:Digit0.N_out
+score[2] <= Display7Segment:Digit0.N_out
+score[3] <= Display7Segment:Digit0.N_out
+score[4] <= Display7Segment:Digit0.N_out
+score[5] <= Display7Segment:Digit0.N_out
+score[6] <= Display7Segment:Digit1.N_out
+score[7] <= Display7Segment:Digit1.N_out
+score[8] <= Display7Segment:Digit1.N_out
+score[9] <= Display7Segment:Digit1.N_out
+score[10] <= Display7Segment:Digit1.N_out
+score[11] <= Display7Segment:Digit1.N_out
+
+
+|Scoreboard|BinaryToBCD:BCDconverter
+clock => decimal_digit_index[0].CLK
+clock => decimal_digit_index[1].CLK
+clock => decimal_digit_index[2].CLK
+clock => decimal_digit_index[3].CLK
+clock => loop_counter[0].CLK
+clock => loop_counter[1].CLK
+clock => loop_counter[2].CLK
+clock => loop_counter[3].CLK
+clock => loop_counter[4].CLK
+clock => loop_counter[5].CLK
+clock => loop_counter[6].CLK
+clock => loop_counter[7].CLK
+clock => bcd_buf[0].CLK
+clock => bcd_buf[1].CLK
+clock => bcd_buf[2].CLK
+clock => bcd_buf[3].CLK
+clock => bcd_buf[4].CLK
+clock => bcd_buf[5].CLK
+clock => bcd_buf[6].CLK
+clock => bcd_buf[7].CLK
+clock => binary_buf[0].CLK
+clock => binary_buf[1].CLK
+clock => binary_buf[2].CLK
+clock => binary_buf[3].CLK
+clock => binary_buf[4].CLK
+clock => binary_buf[5].CLK
+clock => binary_buf[6].CLK
+clock => binary_buf[7].CLK
+clock => completed_buf.CLK
+clock => state~1.DATAIN
+start => binary_buf.OUTPUTSELECT
+start => binary_buf.OUTPUTSELECT
+start => binary_buf.OUTPUTSELECT
+start => binary_buf.OUTPUTSELECT
+start => binary_buf.OUTPUTSELECT
+start => binary_buf.OUTPUTSELECT
+start => binary_buf.OUTPUTSELECT
+start => binary_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => bcd_buf.OUTPUTSELECT
+start => Selector17.IN3
+start => Selector16.IN2
+binary[0] => binary_buf.DATAB
+binary[1] => binary_buf.DATAB
+binary[2] => binary_buf.DATAB
+binary[3] => binary_buf.DATAB
+binary[4] => binary_buf.DATAB
+binary[5] => binary_buf.DATAB
+binary[6] => binary_buf.DATAB
+binary[7] => binary_buf.DATAB
+bcd[0] <= bcd_buf[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd_buf[1].DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd_buf[2].DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd_buf[3].DB_MAX_OUTPUT_PORT_TYPE
+bcd[4] <= bcd_buf[4].DB_MAX_OUTPUT_PORT_TYPE
+bcd[5] <= bcd_buf[5].DB_MAX_OUTPUT_PORT_TYPE
+bcd[6] <= bcd_buf[6].DB_MAX_OUTPUT_PORT_TYPE
+bcd[7] <= bcd_buf[7].DB_MAX_OUTPUT_PORT_TYPE
+completed <= completed_buf.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Scoreboard|Display7Segment:Digit0
+N_in[0] => ~NO_FANOUT~
+N_in[1] => ~NO_FANOUT~
+N_in[2] => ~NO_FANOUT~
+N_in[3] => ~NO_FANOUT~
+update => N_out[0]~reg0.CLK
+update => N_out[1]~reg0.CLK
+update => N_out[2]~reg0.CLK
+update => N_out[3]~reg0.CLK
+update => N_out[4]~reg0.CLK
+update => N_out[5]~reg0.CLK
+update => N_out[6]~reg0.CLK
+N_out[0] <= N_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[1] <= N_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[2] <= N_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[3] <= N_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[4] <= N_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[5] <= N_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[6] <= N_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Scoreboard|Display7Segment:Digit1
+N_in[0] => ~NO_FANOUT~
+N_in[1] => ~NO_FANOUT~
+N_in[2] => ~NO_FANOUT~
+N_in[3] => ~NO_FANOUT~
+update => N_out[0]~reg0.CLK
+update => N_out[1]~reg0.CLK
+update => N_out[2]~reg0.CLK
+update => N_out[3]~reg0.CLK
+update => N_out[4]~reg0.CLK
+update => N_out[5]~reg0.CLK
+update => N_out[6]~reg0.CLK
+N_out[0] <= N_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[1] <= N_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[2] <= N_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[3] <= N_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[4] <= N_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[5] <= N_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+N_out[6] <= N_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,16 @@
+module Pong #(
+	Y_SCREEN,
+	X_SCREEN,
+	MAX_SCORE,
+	BALL_SPEED,
+	BALL_SIZE,
+	PADDLE_SPEED,
+	PADDLE_SIZE
+	)(
+	input reset,
+	input start,
+	input player1_up,
+	input player1_down,
+	input player2_up,
+	input player2_down,
+	)

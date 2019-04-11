@@ -1,0 +1,68 @@
+module Ball #(
+	SIZE = 4,
+	START_H = 160,
+	START_V = 120,
+	MAX_H = 320,
+	MIN_H = 0,
+	MAX_V= 240,
+	MIN_V = 0
+	)(
+	input wire			reset,
+	input wire			clock,					
+	input wire	[8:0]	player1_paddle,
+	input	wire	[8:0]	player2_paddle,
+	output reg	[8:0]	ball_v,
+	output reg	[8:0]	ball_h,
+	)
+	 
+	reg direction_h, direction_v, internal_reset;
+	
+	always @(posedge clock) begin
+	
+		if (reset || internal_reset) begin
+		
+			ball_x <= START_X;
+			ball_y <= START_Y,
+			direction_h <= 1;
+			direction_v <= 1;
+			internal_reset <=0
+			
+		end
+		
+		
+		if (ball_h == MIN_H) begin
+		
+			if (ball_v == player1_paddle) begin
+			
+				direction_h = ~direction_h;
+				direction_v = ~direction_v;
+				
+			end else begin
+			
+				internal_reset = 1;
+			end
+			
+			
+		else if (ball_h == MAX_H) begin
+		
+			if (ball_v == player2_paddle) begin
+			
+				direction_h = ~direction_h;
+				direction_v = ~direction_v;
+				
+			end else begin
+			
+				internal_reset = 1;
+				
+			end
+			
+		else
+		
+			if (ball_v == MAX_V || ball_v == MIN_V) begin
+				
+				direction_v = ~direction_V
+			
+			end
+			
+		end
+				

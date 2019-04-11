@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Lupo/OneDrive - University of Leeds/Pong/simulation/modelsim
+vBall
+Z1 !s110 1554895054
+!i10b 1
+!s100 I;]PlP38h=_AETX_<Zi1A3
+IR2KDhbESAVZ5Vl?DZnPO`0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1554894389
+8C:/Users/Lupo/OneDrive - University of Leeds/Pong/Ball.v
+FC:/Users/Lupo/OneDrive - University of Leeds/Pong/Ball.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1554895054.000000
+!s107 C:/Users/Lupo/OneDrive - University of Leeds/Pong/Ball.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/OneDrive - University of Leeds/Pong|C:/Users/Lupo/OneDrive - University of Leeds/Pong/Ball.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/Lupo/OneDrive - University of Leeds/Pong}
+Z6 tCvgOpt 0
+n@ball
+vBall_tb
+R1
+!i10b 1
+!s100 1B_3ZCb^TVJ]`YdF^dkM[1
+I_Eaz[^Sjo;QgPaoGC2[Rd0
+R2
+R0
+w1554895031
+8C:/Users/Lupo/OneDrive - University of Leeds/Pong/simulation/Ball_tb.v
+FC:/Users/Lupo/OneDrive - University of Leeds/Pong/simulation/Ball_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Lupo/OneDrive - University of Leeds/Pong/simulation/Ball_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/OneDrive - University of Leeds/Pong/simulation|C:/Users/Lupo/OneDrive - University of Leeds/Pong/simulation/Ball_tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+C:/Users/Lupo/OneDrive - University of Leeds/Pong/simulation}
+R6
+n@ball_tb

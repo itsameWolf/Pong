@@ -1,0 +1,9 @@
+
+State Machine - |Scoreboard|BinaryToBCD:BCDconverter|state
+Name state.FINISHED state.CHECK_DIGIT_INDEX state.ADD state.CHECK_SHIFT_INDEX state.SHIFT state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.SHIFT 0 0 0 0 1 1 
+state.CHECK_SHIFT_INDEX 0 0 0 1 0 1 
+state.ADD 0 0 1 0 0 1 
+state.CHECK_DIGIT_INDEX 0 1 0 0 0 1 
+state.FINISHED 1 0 0 0 0 1 
