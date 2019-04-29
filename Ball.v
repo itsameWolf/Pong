@@ -5,7 +5,7 @@ module Ball #(
 	parameter MIN_H = 0,														//minimum horizontal position of the ball
 	parameter MIN_V = 0,														//minimum vertical position of the ball
 	parameter START_H = (MAX_H - MIN_H) / 2,							//starting horizontal position
-	parameter START_V = (MAX_V - MIN_V) / 2								//starting vertical position
+	parameter START_V = (MAX_V - MIN_V) / 2							//starting vertical position
 	)(
 	input wire			reset,									//reset input
 	input wire			clock,									//clock input

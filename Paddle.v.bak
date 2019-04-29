@@ -1,0 +1,5 @@
+module Paddle(
+	input wire 			reset,
+	input wire 			clock,
+	input wire [8:0]	x,
+	input wire [8:0]	y,
