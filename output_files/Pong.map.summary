@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Tue Apr 30 14:24:40 2019
+Analysis & Elaboration Status : Successful - Wed May 01 00:39:47 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Pong
-Top-level Entity Name : Graphics
+Top-level Entity Name : Pong
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

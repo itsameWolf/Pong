@@ -1,28 +1,25 @@
 module Xaddr#(
 	parameter X_MAX = 320
 	)(
+	input wire			clock,
 	input wire 			reset,
-	input wire 			add,
-	output reg [9:0] 	x_addr,
-	output reg 			shift
+	input wire 			enable,
+	output reg [9:0] 	x_addr
 	);
 	
-	always @(posedge add or posedge reset) begin 
+	always @(posedge clock or posedge reset) begin 
 		
 		if (reset) begin 
 			
 			x_addr <= 0;
-			shift <= 0;
 		
-		end else if (x_addr < X_MAX) begin
+		end else if (enable && (x_addr < X_MAX)) begin
 		
 			x_addr <= x_addr + 1;
-			shift <= 0;
 			
 		end else begin 
 		
 			x_addr <= 0;
-			shift <= 1;
 		
 		end
 	
