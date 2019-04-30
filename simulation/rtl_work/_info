@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Lupo/Documents/GitHub/Pong/simulation
 vBinaryToBCD
-Z1 !s110 1554996363
+Z1 !s110 1555067428
 !i10b 1
 !s100 hLXVV^H1=>IC?Sje_3A>U3
 I3i8RAzBRM6[;G];V20lVC3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1554996363.000000
+Z4 !s108 1555067428.000000
 !s107 C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong|C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v|
 !i113 1
@@ -34,11 +34,11 @@ n@binary@to@b@c@d
 vDisplay7Segment
 R1
 !i10b 1
-!s100 Az3U12dPnRPPogA`JkTMA1
-IRm3=D4lH=W<C:W?>HHoDi1
+!s100 jMUCIaVo?9JmL>cnd]me@3
+I1EGBdg9`4<i:fiX:OVhmf1
 R2
 R0
-w1554973426
+w1555065833
 8C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v
 FC:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v
 L0 1
@@ -55,13 +55,13 @@ R6
 R7
 n@display7@segment
 vScoreboard
-R1
+Z8 !s110 1555067429
 !i10b 1
-!s100 b6bd:^;l<578<f3UBWeAR1
-Ig3XFmTGhZ8]<kDG>J9?m21
+!s100 >:ThS=LeX_Am?Zh5QnfBB1
+IYXOBd9VT<egMYKn1ZL[kF1
 R2
 R0
-w1554996073
+w1555067381
 8C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v
 FC:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v
 L0 1
@@ -69,7 +69,7 @@ R3
 r1
 !s85 0
 31
-R4
+Z9 !s108 1555067429.000000
 !s107 C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong|C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v|
 !i113 1
@@ -78,13 +78,13 @@ R6
 R7
 n@scoreboard
 vScoreboard_tb
-R1
+R8
 !i10b 1
-!s100 W0]VoZ>j6dZNz5gV?enDm0
-INE<`Y3TQSZzAVDe?U7Caf1
+!s100 BmUHkDNM8B;1]SCANUGM12
+IB]3W18]1zSe5`kHNEYMl30
 R2
 R0
-w1554994981
+w1555066964
 8C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v
 FC:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v
 L0 3
@@ -92,7 +92,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation|C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v|
 !i113 1

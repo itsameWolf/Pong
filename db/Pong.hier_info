@@ -15,12 +15,23 @@ score[2] <= Display7Segment:Digit0.N_out
 score[3] <= Display7Segment:Digit0.N_out
 score[4] <= Display7Segment:Digit0.N_out
 score[5] <= Display7Segment:Digit0.N_out
-score[6] <= Display7Segment:Digit1.N_out
+score[6] <= Display7Segment:Digit0.N_out
 score[7] <= Display7Segment:Digit1.N_out
 score[8] <= Display7Segment:Digit1.N_out
 score[9] <= Display7Segment:Digit1.N_out
 score[10] <= Display7Segment:Digit1.N_out
 score[11] <= Display7Segment:Digit1.N_out
+score[12] <= Display7Segment:Digit1.N_out
+score[13] <= Display7Segment:Digit1.N_out
+BCD_score[0] <= BCD_score[0].DB_MAX_OUTPUT_PORT_TYPE
+BCD_score[1] <= BCD_score[1].DB_MAX_OUTPUT_PORT_TYPE
+BCD_score[2] <= BCD_score[2].DB_MAX_OUTPUT_PORT_TYPE
+BCD_score[3] <= BCD_score[3].DB_MAX_OUTPUT_PORT_TYPE
+BCD_score[4] <= BCD_score[4].DB_MAX_OUTPUT_PORT_TYPE
+BCD_score[5] <= BCD_score[5].DB_MAX_OUTPUT_PORT_TYPE
+BCD_score[6] <= BCD_score[6].DB_MAX_OUTPUT_PORT_TYPE
+BCD_score[7] <= BCD_score[7].DB_MAX_OUTPUT_PORT_TYPE
+completed_conversion <= completed_conversion.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Scoreboard|BinaryToBCD:BCDconverter

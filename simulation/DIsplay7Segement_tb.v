@@ -2,6 +2,7 @@
 
 module Display7Segment_tb;
 	
+	reg				clock;
 	reg		[3:0] 	binary_in;
 	reg 			update;
 	wire	[6:0]	out;
@@ -15,36 +16,48 @@ module Display7Segment_tb;
 	);
 	
 	initial begin
-		binary_in = 7'h0;
-		update = 0;
-		#10;
-		binary_in = 7'h1;
-		update = 1;
-		#1;
-		update = 0;
-		#9;
-		binary_in = 7'h2;
-		#10;
-		binary_in = 7'h3;
-		update = 1;
-		#1;
-		update = 0;
-		#9;
-		binary_in = 7'h4;
-		#10;
-		binary_in = 7'h5;
-		#10;
-		binary_in = 7'h6;
-		#10;
-		binary_in = 7'h7;
-		update = 1;
-		#1;
-		update = 0;
-		#9;
-		binary_in = 7'h8;
-		#10;
-		binary_in = 7'h9;
-		#10;
+
+		clock = 1'b0;
+		update = 1'b0;
+		binary_in = 4'd3; 
+	
+	end
+	
+	localparam NUM_CYCLES = 500;
+	localparam CLOCK_FREQ = 50000000;
+	
+	real HALF_CLOCK_PERIOD = (1000000000.0 / $itor(CLOCK_FREQ)) / 2;
+	integer half_cycles = 0;
+	
+	always begin
+		#(HALF_CLOCK_PERIOD)
+		if (half_cycles == 50) begin
+			update = ~update;
+		end
+		
+		if (half_cycles == 52) begin
+			update = ~update;
+		end
+		
+		if (half_cycles == 500) begin
+			binary_in = 4'd7;
+		end
+		
+		if (half_cycles == 550) begin
+			update = ~update;
+		end
+		
+		if (half_cycles == 552) begin
+			update = ~update;
+		end
+		
+		clock = ~clock;
+		half_cycles = half_cycles + 1;
+		
+		if (half_cycles == (2*NUM_CYCLES)) begin
+			half_cycles = 0;
+			$stop;
+		end
 	end
 	
 endmodule

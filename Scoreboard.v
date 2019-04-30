@@ -5,12 +5,14 @@ module Scoreboard #(
 	input wire	[INPUT_LENGTH-1:0]	binary,
 	input wire								clock,
 	input wire								update,
-	//output wire	[N_DIGITS*6-1:0]		score
-	output wire	[11:0]					score
+	output wire	[N_DIGITS*7-1:0]		score,
+	//output wire	[13:0]					score,
+	output wire [(N_DIGITS*4-1):0]	BCD_score,
+	output wire 							completed_conversion
 	);
 	
-	wire [(N_DIGITS*4-1):0]	BCD_score;
-	wire 							completed_conversion;
+//	wire [(N_DIGITS*4-1):0]	BCD_score;
+//	wire 							completed_conversion;
 	
 	BinaryToBCD #(
 		.INPUT_LENGTH		(INPUT_LENGTH),
@@ -26,14 +28,15 @@ module Scoreboard #(
 	Display7Segment Digit0(
 		.N_in		(BCD_score[3:0]),
 		.update	(completed_conversion),
-		.N_out	(score[5:0])
+		.N_out	(score[6:0])
 	);
 	
 	Display7Segment Digit1(
 		.N_in		(BCD_score[7:4]),
 		.update	(completed_conversion),
-		.N_out	(score[11:6])
+		.N_out	(score[13:7])
 	);
+
 //	genvar i;
 //	
 //	generate 
@@ -42,7 +45,7 @@ module Scoreboard #(
 //			Display7Segment Display (
 //			.N_in			(BCD_score[(i*4)+:4]),
 //			.update		(completed_conversion),
-//			.N_out		(score[(i*6)+:6])
+//			.N_out		(score[(i*7)+:7])
 //			);
 //			
 //		end

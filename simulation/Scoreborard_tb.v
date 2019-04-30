@@ -5,13 +5,17 @@ module Scoreboard_tb;
 	reg				clock;
 	reg				start;
 	reg 	[7:0] 	binary_in;
-	wire	[11:0]	disp_out;
+	wire	[13:0]	disp_out;
+	wire	[7:0]	bcd_out;
+	wire			bcd_complete;
 
 	Scoreboard Scoreboard_dut(
 		.binary		(binary_in),
 		.clock		(clock),
 		.update		(start),
-		.score		(disp_out)
+		.score		(disp_out),
+		.BCD_score	(bcd_out),
+		.completed_conversion	(bcd_complete)
 	);
 	
 	localparam NUM_CYCLES = 500;
@@ -30,11 +34,11 @@ module Scoreboard_tb;
 	
 	always begin
 		#(HALF_CLOCK_PERIOD)
-		if (half_cycles == 10) begin
+		if (half_cycles == 30) begin
 			start = ~start;
 		end
 		
-		if (half_cycles == 14) begin
+		if (half_cycles == 32) begin
 			start = ~start;
 		end
 		
@@ -55,7 +59,7 @@ module Scoreboard_tb;
 		
 		if (half_cycles == (2*NUM_CYCLES)) begin
 			half_cycles = 0;
-			$stop;
+ 			$stop;
 		end
 	end
 
