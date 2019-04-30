@@ -14,15 +14,17 @@ module Xaddr#(
 			x_addr <= 0;
 			shift <= 0;
 		
-		end else if (x_addr < x_MAX) begin
+		end else if (x_addr < X_MAX) begin
 		
-			x_addr <= y_addr + 1;
+			x_addr <= x_addr + 1;
 			shift <= 0;
 			
 		end else begin 
 		
 			x_addr <= 0;
 			shift <= 1;
+		
+		end
 	
 	end
 	

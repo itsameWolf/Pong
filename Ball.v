@@ -11,7 +11,7 @@ module Ball #(
 	input wire			clock,									//clock input
 	input wire	[8:0]	player1_paddle,						//vertical position of player 1's paddle
 	input	wire	[8:0]	player2_paddle,						//vertical position of player 1's paddle
-	output reg	[8:0]	ball_v,									//vertical position of the ball
+	output reg	[8:0]	ball_y,									//vertical position of the ball
 	output reg	[8:0]	ball_h									//vertical position of the ball
 	);
 	 
@@ -21,7 +21,7 @@ module Ball #(
 	
 		if (reset) begin
 		
-			ball_v = START_V;									//reset the ball to the starting vertical position
+			ball_y = START_V;									//reset the ball to the starting vertical position
 			ball_h = START_H;									//reset the ball to the starting horizontal position 
 			direction_h = 1;									//move up
 			direction_v = 1;									//move right
@@ -30,7 +30,7 @@ module Ball #(
 		
 		if (ball_h == MIN_H) begin								//if the ball hits palyer 1's paddle reverse the horizontal movement
 		
-			if (ball_v == player1_paddle) begin				
+			if (ball_y == player1_paddle) begin				
 			
 				direction_h = ~direction_h;
 				
@@ -38,13 +38,13 @@ module Ball #(
 			
 		end else if (ball_h == MAX_H) begin					//if the ball hits palyer 2's paddle reverse the horizontal movement
 		
-			if (ball_v == player2_paddle) begin
+			if (ball_y == player2_paddle) begin
 			
 				direction_h = ~direction_h;
 				
 			end
 			
-		end else if (ball_v == MAX_V || ball_v == MIN_V) begin	// if the ball its either one  of the horizontal edges of the screen rverse the vertical movement
+		end else if (ball_y == MAX_V || ball_y == MIN_V) begin	// if the ball its either one  of the horizontal edges of the screen rverse the vertical movement
 				
 			direction_v = ~direction_v;
 			
@@ -62,11 +62,11 @@ module Ball #(
 		
 		if (direction_v == 1) begin
 			
-			ball_v = ball_v + 1;
+			ball_y = ball_y + 1;
 			
 		end else begin
 			
-			ball_v = ball_v - 1;
+			ball_y = ball_y - 1;
 		
 		end
 			

@@ -19,7 +19,9 @@ module Yaddr#(
 		end else begin 
 		
 			y_addr <= 0;
-	
+		
+		end
+		
 	end
 	
 endmodule
