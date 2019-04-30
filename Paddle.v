@@ -11,7 +11,7 @@ module Paddle#(
 	input wire 			clock,
 	input wire 			up,
 	input wire 			down,
-	output reg [9:0]	paddle_x,
+	output reg [8:0]	paddle_x,
 	output reg [8:0]	paddle_y
 	);
 	

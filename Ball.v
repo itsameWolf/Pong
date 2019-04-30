@@ -9,10 +9,10 @@ module Ball #(
 	)(
 	input wire			reset,									//reset input
 	input wire			clock,									//clock input
-	input wire	[8:0]	player1_paddle,						//vertical position of player 1's paddle
-	input	wire	[8:0]	player2_paddle,						//vertical position of player 1's paddle
+	input wire	[8:0]	player_1_y,						//vertical position of player 1's paddle
+	input	wire	[8:0]	player_2_y,						//vertical position of player 1's paddle
 	output reg	[8:0]	ball_y,									//vertical position of the ball
-	output reg	[8:0]	ball_h									//vertical position of the ball
+	output reg	[8:0]	ball_x									//vertical position of the ball
 	);
 	 
 	reg direction_h, direction_v;								//flag keeping track of which direction the ball is moving
@@ -22,23 +22,23 @@ module Ball #(
 		if (reset) begin
 		
 			ball_y = START_V;									//reset the ball to the starting vertical position
-			ball_h = START_H;									//reset the ball to the starting horizontal position 
+			ball_x = START_H;									//reset the ball to the starting horizontal position 
 			direction_h = 1;									//move up
 			direction_v = 1;									//move right
 			
 		end 
 		
-		if (ball_h == MIN_H) begin								//if the ball hits palyer 1's paddle reverse the horizontal movement
+		if (ball_x == MIN_H) begin								//if the ball hits palyer 1's paddle reverse the horizontal movement
 		
-			if (ball_y == player1_paddle) begin				
+			if (ball_y == player_1_y) begin				
 			
 				direction_h = ~direction_h;
 				
 			end
 			
-		end else if (ball_h == MAX_H) begin					//if the ball hits palyer 2's paddle reverse the horizontal movement
+		end else if (ball_x == MAX_H) begin					//if the ball hits palyer 2's paddle reverse the horizontal movement
 		
-			if (ball_y == player2_paddle) begin
+			if (ball_y == player_2_y) begin
 			
 				direction_h = ~direction_h;
 				
@@ -52,11 +52,11 @@ module Ball #(
 		
 		if (direction_h == 1) begin
 			
-			ball_h = ball_h + 1;
+			ball_x = ball_x + 1;
 			
 		end else begin
 			
-			ball_h = ball_h - 1;
+			ball_x = ball_x - 1;
 		
 		end
 		

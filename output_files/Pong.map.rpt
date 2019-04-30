@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pong
-Tue Apr 30 13:20:40 2019
+Tue Apr 30 14:24:40 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,15 +10,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |Graphics
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -41,27 +33,22 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 30 13:20:40 2019       ;
-; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                   ; Pong                                        ;
-; Top-level Entity Name           ; Graphics                                    ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 88                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Tue Apr 30 14:24:40 2019           ;
+; Quartus Prime Version       ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name               ; Pong                                        ;
+; Top-level Entity Name       ; Graphics                                    ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -167,144 +154,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                   ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
-; Graphics.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
-
-
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimate of Logic utilization (ALMs needed) ; 95               ;
-;                                             ;                  ;
-; Combinational ALUT usage for logic          ; 144              ;
-;     -- 7 input functions                    ; 0                ;
-;     -- 6 input functions                    ; 46               ;
-;     -- 5 input functions                    ; 8                ;
-;     -- 4 input functions                    ; 26               ;
-;     -- <=3 input functions                  ; 64               ;
-;                                             ;                  ;
-; Dedicated logic registers                   ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 88               ;
-;                                             ;                  ;
-; Total DSP Blocks                            ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; pixel_y[7]~input ;
-; Maximum fan-out                             ; 12               ;
-; Total fan-out                               ; 642              ;
-; Average fan-out                             ; 2.01             ;
-+---------------------------------------------+------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |Graphics                  ; 144 (144)           ; 0 (0)                     ; 0                 ; 0          ; 88   ; 0            ; |Graphics           ; Graphics    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; pixel_color[0]$latch                               ; pixel_color[15]     ; yes                    ;
-; pixel_color[1]$latch                               ; pixel_color[15]     ; yes                    ;
-; pixel_color[2]$latch                               ; pixel_color[15]     ; yes                    ;
-; pixel_color[3]$latch                               ; pixel_color[15]     ; yes                    ;
-; pixel_color[4]$latch                               ; pixel_color[15]     ; yes                    ;
-; pixel_color[5]$latch                               ; pixel_color[15]     ; yes                    ;
-; pixel_color[6]$latch                               ; pixel_color[15]     ; yes                    ;
-; pixel_color[7]$latch                               ; pixel_color[15]     ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Graphics ;
-+----------------+------------------+--------------------------------------+
-; Parameter Name ; Value            ; Type                                 ;
-+----------------+------------------+--------------------------------------+
-; BACKGROUND_RGB ; 0000000000000000 ; Unsigned Binary                      ;
-; BALL_RGB       ; 0000000011111111 ; Unsigned Binary                      ;
-; PADDLE_RGB     ; 0000000011111111 ; Unsigned Binary                      ;
-; BALL_SIZE      ; 4                ; Signed Integer                       ;
-; PADDLE_WIDTH   ; 3                ; Signed Integer                       ;
-; PADDLE_HEIGTH  ; 20               ; Signed Integer                       ;
-; MAX_H          ; 320              ; Signed Integer                       ;
-; MAX_V          ; 240              ; Signed Integer                       ;
-; MIN_H          ; 0                ; Signed Integer                       ;
-; MIN_V          ; 0                ; Signed Integer                       ;
-+----------------+------------------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 145                         ;
-;     arith             ; 48                          ;
-;         0 data inputs ; 6                           ;
-;         1 data inputs ; 38                          ;
-;         2 data inputs ; 4                           ;
-;     normal            ; 97                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 26                          ;
-;         5 data inputs ; 8                           ;
-;         6 data inputs ; 46                          ;
-; boundary_port         ; 88                          ;
-;                       ;                             ;
-; Max LUT depth         ; 6.40                        ;
-; Average LUT depth     ; 5.86                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 30 13:20:25 2019
+    Info: Processing started: Tue Apr 30 14:24:26 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pong -c Pong
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -319,6 +175,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file ball.v
     Info (12023): Found entity 1: Ball File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
     Info (12023): Found entity 1: ClockDivider File: C:/Users/Lupo/Documents/GitHub/Pong/ClockDivider.v Line: 1
+Error (10170): Verilog HDL syntax error at Pong.v(62) near text: ",";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 62
 Info (12021): Found 0 design units, including 0 entities, in source file pong.v
 Info (12021): Found 1 design units, including 1 entities, in source file binarytobcd.v
     Info (12023): Found entity 1: BinaryToBCD File: C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v Line: 1
@@ -332,60 +189,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file xaddr.v
     Info (12023): Found entity 1: Xaddr File: C:/Users/Lupo/Documents/GitHub/Pong/Xaddr.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file graphics.v
     Info (12023): Found entity 1: Graphics File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 1
-Info (12127): Elaborating entity "Graphics" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at Graphics.v(26): variable "ball_y" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 26
-Warning (10235): Verilog HDL Always Construct warning at Graphics.v(28): variable "ball_x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 28
-Warning (10235): Verilog HDL Always Construct warning at Graphics.v(34): variable "paddle_1_y" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 34
-Warning (10235): Verilog HDL Always Construct warning at Graphics.v(36): variable "paddle_1_x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 36
-Warning (10235): Verilog HDL Always Construct warning at Graphics.v(42): variable "paddle_2_y" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 42
-Warning (10235): Verilog HDL Always Construct warning at Graphics.v(44): variable "paddle_2_x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 44
-Warning (10240): Verilog HDL Always Construct warning at Graphics.v(24): inferring latch(es) for variable "pixel_color", which holds its previous value in one or more paths through the always construct File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[0]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[1]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[2]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[3]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[4]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[5]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[6]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[7]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[8]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[9]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[10]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[11]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[12]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[13]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[14]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (10041): Inferred latch for "pixel_color[15]" at Graphics.v(24) File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "pixel_color[7]$latch" merged with LATCH primitive "pixel_color[0]$latch" File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Info (13026): Duplicate LATCH primitive "pixel_color[6]$latch" merged with LATCH primitive "pixel_color[0]$latch" File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Info (13026): Duplicate LATCH primitive "pixel_color[5]$latch" merged with LATCH primitive "pixel_color[0]$latch" File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Info (13026): Duplicate LATCH primitive "pixel_color[4]$latch" merged with LATCH primitive "pixel_color[0]$latch" File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Info (13026): Duplicate LATCH primitive "pixel_color[3]$latch" merged with LATCH primitive "pixel_color[0]$latch" File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Info (13026): Duplicate LATCH primitive "pixel_color[2]$latch" merged with LATCH primitive "pixel_color[0]$latch" File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Info (13026): Duplicate LATCH primitive "pixel_color[1]$latch" merged with LATCH primitive "pixel_color[0]$latch" File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Warning (13012): Latch pixel_color[0]$latch has unsafe behavior File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball_y[8] File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 14
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pixel_color[8]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13410): Pin "pixel_color[9]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13410): Pin "pixel_color[10]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13410): Pin "pixel_color[11]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13410): Pin "pixel_color[12]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13410): Pin "pixel_color[13]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13410): Pin "pixel_color[14]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-    Warning (13410): Pin "pixel_color[15]" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 24
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 232 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 72 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 144 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4832 megabytes
-    Info: Processing ended: Tue Apr 30 13:20:40 2019
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:31
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4786 megabytes
+    Error: Processing ended: Tue Apr 30 14:24:40 2019
+    Error: Elapsed time: 00:00:14
+    Error: Total CPU time (on all processors): 00:00:33
 
 
