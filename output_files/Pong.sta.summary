@@ -3,83 +3,83 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clock50'
-Slack : 5.596
+Slack : 5.273
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'clock50'
-Slack : 0.243
+Slack : 0.374
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'clock50'
-Slack : 15.744
+Slack : 15.282
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'clock50'
-Slack : 0.239
+Slack : 0.421
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock50'
-Slack : 9.004
+Slack : 9.077
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'clock50'
-Slack : 5.808
+Slack : 5.503
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'clock50'
-Slack : 0.229
+Slack : 0.388
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'clock50'
-Slack : 15.928
+Slack : 15.267
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'clock50'
-Slack : 0.201
+Slack : 0.360
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock50'
-Slack : 9.033
+Slack : 9.088
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'clock50'
-Slack : 9.564
+Slack : 9.278
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clock50'
-Slack : 0.143
+Slack : 0.180
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'clock50'
-Slack : 17.304
+Slack : 16.975
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'clock50'
-Slack : 0.161
+Slack : 0.285
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock50'
-Slack : 9.035
+Slack : 9.109
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'clock50'
-Slack : 9.919
+Slack : 9.676
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clock50'
-Slack : 0.129
+Slack : 0.172
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'clock50'
-Slack : 17.508
+Slack : 17.187
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'clock50'
-Slack : 0.126
+Slack : 0.230
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock50'
-Slack : 9.067
+Slack : 9.117
 TNS   : 0.000
 
 ------------------------------------------------------------

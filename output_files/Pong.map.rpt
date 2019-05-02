@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pong
-Thu May 02 23:28:25 2019
+Fri May 03 00:51:06 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 02 23:28:25 2019       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 03 00:51:06 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Pong                                        ;
 ; Top-level Entity Name           ; Pong                                        ;
@@ -205,14 +205,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 221         ;
+; Estimate of Logic utilization (ALMs needed) ; 227         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 357         ;
+; Combinational ALUT usage for logic          ; 364         ;
 ;     -- 7 input functions                    ; 1           ;
-;     -- 6 input functions                    ; 79          ;
-;     -- 5 input functions                    ; 62          ;
-;     -- 4 input functions                    ; 45          ;
-;     -- <=3 input functions                  ; 170         ;
+;     -- 6 input functions                    ; 84          ;
+;     -- 5 input functions                    ; 44          ;
+;     -- 4 input functions                    ; 52          ;
+;     -- <=3 input functions                  ; 183         ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 172         ;
 ;                                             ;             ;
@@ -222,8 +222,8 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 137         ;
-; Total fan-out                               ; 2044        ;
-; Average fan-out                             ; 3.48        ;
+; Total fan-out                               ; 2043        ;
+; Average fan-out                             ; 3.44        ;
 +---------------------------------------------+-------------+
 
 
@@ -232,11 +232,11 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name          ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
-; |Pong                                      ; 357 (2)             ; 172 (4)                   ; 0                 ; 0          ; 29   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
-;    |Ball:GameBall|                         ; 54 (54)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
+; |Pong                                      ; 364 (2)             ; 172 (4)                   ; 0                 ; 0          ; 29   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
+;    |Ball:GameBall|                         ; 51 (51)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
 ;    |ClockDivider:GameClock|                ; 30 (30)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|ClockDivider:GameClock                                 ; ClockDivider         ; work         ;
-;    |Graphics:GameGraphics|                 ; 97 (97)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
-;    |LT24Display:Display|                   ; 115 (58)            ; 88 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display                                    ; LT24Display          ; work         ;
+;    |Graphics:GameGraphics|                 ; 108 (108)           ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
+;    |LT24Display:Display|                   ; 114 (57)            ; 88 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display                                    ; LT24Display          ; work         ;
 ;       |LT24DisplayInterface:LT24Interface| ; 30 (30)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24DisplayInterface:LT24Interface ; LT24DisplayInterface ; work         ;
 ;       |LT24InitialData:initDataRom|        ; 27 (27)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24InitialData:initDataRom        ; LT24InitialData      ; work         ;
 ;       |ResetSynchroniser:resetGen|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|ResetSynchroniser:resetGen         ; ResetSynchroniser    ; work         ;
@@ -301,11 +301,11 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 172   ;
-; Number of registers using Synchronous Clear  ; 48    ;
+; Number of registers using Synchronous Clear  ; 59    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 123   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 99    ;
+; Number of registers using Clock Enable       ; 116   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -315,7 +315,7 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------+---------+
 ; Inverted Register                                           ; Fan out ;
 +-------------------------------------------------------------+---------+
-; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3] ; 90      ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3] ; 66      ;
 ; LT24Display:Display|displayRegSelect                        ; 2       ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2] ; 1       ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1] ; 1       ;
@@ -324,9 +324,9 @@ Encoding Type:  One-Hot
 ; Paddle:Paddle2|paddle_x[5]                                  ; 11      ;
 ; Paddle:Paddle2|paddle_x[4]                                  ; 13      ;
 ; Paddle:Paddle2|paddle_x[3]                                  ; 13      ;
+; Paddle:Paddle1|paddle_x[4]                                  ; 12      ;
 ; Paddle:Paddle1|paddle_x[6]                                  ; 11      ;
 ; Paddle:Paddle1|paddle_x[5]                                  ; 11      ;
-; Paddle:Paddle1|paddle_x[4]                                  ; 12      ;
 ; Paddle:Paddle1|paddle_x[3]                                  ; 14      ;
 ; ClockDivider:GameClock|clk_out                              ; 36      ;
 ; Total number of inverted registers = 14                     ;         ;
@@ -338,14 +338,16 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[1]          ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[0]          ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Pong|LT24Display:Display|displayData[10] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_y[5]             ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |Pong|Ball:GameBall|ball_x[2]             ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[2]          ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[7]          ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Pong|LT24Display:Display|displayData[11] ;
 ; 14:1               ; 3 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |Pong|LT24Display:Display|displayData[4]  ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Pong|LT24Display:Display|displayData[3]  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[5]          ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[3]          ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |Pong|LT24Display:Display|Selector9       ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Pong|LT24Display:Display|displayData[5]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[3]          ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[6]          ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |Pong|LT24Display:Display|Selector17      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 
 
@@ -443,12 +445,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
 ; SIZE           ; 10    ; Signed Integer                    ;
-; MAX_Y          ; 310   ; Signed Integer                    ;
+; MAX_Y          ; 290   ; Signed Integer                    ;
 ; MAX_X          ; 239   ; Signed Integer                    ;
-; MIN_Y          ; 10    ; Signed Integer                    ;
+; MIN_Y          ; 30    ; Signed Integer                    ;
 ; MIN_X          ; 0     ; Signed Integer                    ;
-; START_Y        ; 150   ; Signed Integer                    ;
-; START_X        ; 119   ; Signed Integer                    ;
+; START_Y        ; 160   ; Signed Integer                    ;
+; START_X        ; 120   ; Signed Integer                    ;
+; PADDLE_WIDTH   ; 5     ; Signed Integer                    ;
 ; PADDLE_HEIGHT  ; 40    ; Signed Integer                    ;
 +----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -537,32 +540,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_ff             ; 172                         ;
 ;     CLR               ; 20                          ;
 ;     CLR SCLR          ; 24                          ;
-;     ENA               ; 20                          ;
+;     ENA               ; 26                          ;
 ;     ENA CLR           ; 55                          ;
 ;     ENA CLR SCLR      ; 24                          ;
-;     plain             ; 29                          ;
-; arriav_lcell_comb     ; 360                         ;
-;     arith             ; 134                         ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 82                          ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 15                          ;
+;     ENA SCLR          ; 11                          ;
+;     plain             ; 12                          ;
+; arriav_lcell_comb     ; 367                         ;
+;     arith             ; 126                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 90                          ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 7                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 225                         ;
+;     normal            ; 240                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 29                          ;
-;         4 data inputs ; 44                          ;
-;         5 data inputs ; 47                          ;
-;         6 data inputs ; 79                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 33                          ;
+;         4 data inputs ; 45                          ;
+;         5 data inputs ; 44                          ;
+;         6 data inputs ; 84                          ;
 ; boundary_port         ; 29                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.40                        ;
-; Average LUT depth     ; 3.31                        ;
+; Max LUT depth         ; 5.80                        ;
+; Average LUT depth     ; 3.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -581,7 +584,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 02 23:28:11 2019
+    Info: Processing started: Fri May 03 00:50:52 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pong -c Pong
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -625,12 +628,16 @@ Info (12128): Elaborating entity "Yaddr" for hierarchy "Yaddr:GameYaddr" File: E
 Warning (10230): Verilog HDL assignment warning at Yaddr.v(24): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Yaddr.v Line: 24
 Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:GameClock" File: E:/Documents/GitHub/Pong/Pong.v Line: 76
 Info (12128): Elaborating entity "Ball" for hierarchy "Ball:GameBall" File: E:/Documents/GitHub/Pong/Pong.v Line: 98
-Warning (10230): Verilog HDL assignment warning at Ball.v(25): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 25
-Warning (10230): Verilog HDL assignment warning at Ball.v(26): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 26
-Warning (10230): Verilog HDL assignment warning at Ball.v(56): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 56
-Warning (10230): Verilog HDL assignment warning at Ball.v(60): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 60
-Warning (10230): Verilog HDL assignment warning at Ball.v(66): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 66
-Warning (10230): Verilog HDL assignment warning at Ball.v(70): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 70
+Warning (10230): Verilog HDL assignment warning at Ball.v(26): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 26
+Warning (10230): Verilog HDL assignment warning at Ball.v(27): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 27
+Warning (10230): Verilog HDL assignment warning at Ball.v(47): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 47
+Warning (10230): Verilog HDL assignment warning at Ball.v(51): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 51
+Warning (10230): Verilog HDL assignment warning at Ball.v(57): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 57
+Warning (10230): Verilog HDL assignment warning at Ball.v(61): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 61
+Warning (10230): Verilog HDL assignment warning at Ball.v(69): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 69
+Warning (10230): Verilog HDL assignment warning at Ball.v(73): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 73
+Warning (10230): Verilog HDL assignment warning at Ball.v(79): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 79
+Warning (10230): Verilog HDL assignment warning at Ball.v(83): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 83
 Info (12128): Elaborating entity "Paddle" for hierarchy "Paddle:Paddle1" File: E:/Documents/GitHub/Pong/Pong.v Line: 117
 Warning (10230): Verilog HDL assignment warning at Paddle.v(22): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Paddle.v Line: 22
 Warning (10230): Verilog HDL assignment warning at Paddle.v(30): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Paddle.v Line: 30
@@ -655,14 +662,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 425 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 430 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 396 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Thu May 02 23:28:25 2019
+    Info (21061): Implemented 401 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Fri May 03 00:51:06 2019
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:29
 
 

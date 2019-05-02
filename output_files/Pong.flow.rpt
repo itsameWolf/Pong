@@ -1,5 +1,5 @@
 Flow report for Pong
-Thu May 02 23:29:33 2019
+Fri May 03 00:52:17 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,14 +40,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu May 02 23:29:33 2019       ;
+; Flow Status                     ; Successful - Fri May 03 00:52:17 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Pong                                        ;
 ; Top-level Entity Name           ; Pong                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 220 / 32,070 ( < 1 % )                      ;
+; Logic utilization (in ALMs)     ; 225 / 32,070 ( < 1 % )                      ;
 ; Total registers                 ; 203                                         ;
 ; Total pins                      ; 29 / 457 ( 6 % )                            ;
 ; Total virtual pins              ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/02/2019 23:28:12 ;
+; Start date & time ; 05/03/2019 00:50:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pong                ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------+----------------------------------------+---------------+-------------+--------------------+
 ; Assignment Name                        ; Value                                  ; Default Value ; Entity Name ; Section Id         ;
 +----------------------------------------+----------------------------------------+---------------+-------------+--------------------+
-; COMPILER_SIGNATURE_ID                  ; 229044593653385.155683609136308        ; --            ; --          ; --                 ;
+; COMPILER_SIGNATURE_ID                  ; 229044593653385.155684105322808        ; --            ; --          ; --                 ;
 ; EDA_DESIGN_INSTANCE_NAME               ; NA                                     ; --            ; --          ; Scoreboard_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME               ; NA                                     ; --            ; --          ; Display7Segment_tb ;
 ; EDA_DESIGN_INSTANCE_NAME               ; NA                                     ; --            ; --          ; BinaryToBCD_tb     ;
@@ -122,12 +122,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 4853 MB             ; 00:00:28                           ;
-; Fitter                    ; 00:00:44     ; 1.0                     ; 6906 MB             ; 00:01:23                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 4849 MB             ; 00:00:08                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.1                     ; 5273 MB             ; 00:00:10                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4766 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:16     ; --                      ; --                  ; 00:02:11                           ;
+; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 4852 MB             ; 00:00:28                           ;
+; Fitter                    ; 00:00:45     ; 1.0                     ; 6908 MB             ; 00:01:26                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 4847 MB             ; 00:00:08                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.1                     ; 5271 MB             ; 00:00:10                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4764 MB             ; 00:00:02                           ;
+; Total                     ; 00:01:18     ; --                      ; --                  ; 00:02:14                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

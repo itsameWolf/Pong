@@ -1,11 +1,12 @@
 module Ball #(
 	parameter SIZE = 10,														//length of ball edge in pixels
-	parameter MAX_Y = 310,													//maximum horizontal position of the ball														
+	parameter MAX_Y = 290,													//maximum horizontal position of the ball														
 	parameter MAX_X = 239,													//maximum vertical position of the ball			
-	parameter MIN_Y = 10,													//minimum horizontal position of the ball
+	parameter MIN_Y = 30,													//minimum horizontal position of the ball
 	parameter MIN_X = 0,														//minimum vertical position of the ball
-	parameter START_Y = (MAX_Y - MIN_Y) / 2,							//starting horizontal position
-	parameter START_X = (MAX_X - MIN_X) / 2,							//starting vertical position
+	parameter START_Y = 160,							//starting horizontal position
+	parameter START_X = 120,							//starting vertical position
+	parameter PADDLE_WIDTH = 5;
 	parameter PADDLE_HEIGHT = 40
 	)(
 	input wire			reset,												//reset input
@@ -27,50 +28,65 @@ module Ball #(
 			direction_y = 1;									//move up
 			direction_x = 1;									//move right
 			
-		end 
+		end else begin
 		
-		if (ball_y == MIN_Y) begin								//if the ball hits palyer 1's paddle reverse the horizontal movement
-		
-			if ((ball_x >= player_1_x) && ((ball_x + SIZE) <= (player_1_x + PADDLE_HEIGHT))) begin				
-			
+			if ((ball_y == MIN_Y + PADDLE_WIDTH) && ((ball_x - SIZE >= player_1_x) && (ball_x <= (player_1_x + PADDLE_HEIGHT)))) begin				
+				
 				direction_y = ~direction_y;
 				
-			end
-			
-		end else if ((ball_y + SIZE) == MAX_Y) begin					//if the ball hits palyer 2's paddle reverse the horizontal movement
-		
-			if ((ball_x >= player_2_x) && ((ball_x + SIZE) <= (player_2_x + PADDLE_HEIGHT))) begin
-			
+			end else if (((ball_y + SIZE) == MAX_Y) && ((ball_x >= player_2_x) && ((ball_x + SIZE) <= (player_2_x + PADDLE_HEIGHT)))) begin
+				
 				direction_y = ~direction_y;
 				
+			end else if ((ball_x	+ SIZE) == MAX_X || ball_x == MIN_X) begin	// if the ball its either one  of the horizontal edges of the screen rverse the vertical movement
+					
+				direction_x= ~direction_x;
+				
+				if (direction_x == 1) begin
+				
+					ball_x = ball_x + 1;
+					
+				end else begin
+					
+					ball_x = ball_x - 1;
+				
+				end
+				
+				if (direction_y == 1) begin
+					
+					ball_y = ball_y + 1;
+					
+				end else begin
+					
+					ball_y = ball_y - 1;
+				
+				end
+				
+			end else begin
+			
+				if (direction_x == 1) begin
+					
+					ball_x = ball_x + 1;
+					
+				end else begin
+					
+					ball_x = ball_x - 1;
+				
+				end
+				
+				if (direction_y == 1) begin
+					
+					ball_y = ball_y + 1;
+					
+				end else begin
+					
+					ball_y = ball_y - 1;
+				
+				end
 			end
 			
-		end else if ((ball_x	+ SIZE) == MAX_X || ball_x == MIN_X) begin	// if the ball its either one  of the horizontal edges of the screen rverse the vertical movement
-				
-			direction_x = ~direction_x;
-			
 		end
 		
-		if (direction_x == 1) begin
-			
-			ball_x = ball_x + 1;
-			
-		end else begin
-			
-			ball_x = ball_x - 1;
-		
-		end
-		
-		if (direction_y == 1) begin
-			
-			ball_y = ball_y + 1;
-			
-		end else begin
-			
-			ball_y = ball_y - 1;
-		
-		end
-			
 	end
 
 endmodule
