@@ -1,5 +1,5 @@
 Fitter report for Pong
-Thu May 02 17:00:04 2019
+Thu May 02 22:25:17 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -62,15 +62,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Thu May 02 17:00:04 2019       ;
+; Fitter Status                   ; Successful - Thu May 02 22:25:17 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Pong                                        ;
 ; Top-level Entity Name           ; Pong                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 251 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 213                                         ;
+; Logic utilization (in ALMs)     ; 260 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 220                                         ;
 ; Total pins                      ; 29 / 457 ( 6 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -157,64 +157,70 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.2%      ;
-;     Processor 3            ;   0.9%      ;
-;     Processor 4            ;   0.9%      ;
+;     Processor 2            ;   1.3%      ;
+;     Processor 3            ;   1.1%      ;
+;     Processor 4            ;   1.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                                                                                                ;
-+-------------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------+------------------+-----------------------+
-; Node                                                              ; Action          ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                                             ; Destination Port ; Destination Port Name ;
-+-------------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------+------------------+-----------------------+
-; clock~inputCLKENA0                                                ; Created         ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                              ;                  ;                       ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly   ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly~_Duplicate_1 ; Q                ;                       ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly   ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Wr_n~output                                                              ; I                ;                       ;
-; LT24Display:Display|displayData[0]                                ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[0]~_Duplicate_1                              ; Q                ;                       ;
-; LT24Display:Display|displayData[0]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[0]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[1]                                ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[1]~_Duplicate_1                              ; Q                ;                       ;
-; LT24Display:Display|displayData[1]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[1]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[2]                                ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[2]~_Duplicate_1                              ; Q                ;                       ;
-; LT24Display:Display|displayData[2]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[2]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[3]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[3]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[4]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[4]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[5]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[5]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[6]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[6]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[7]                                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[7]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[10]                               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[10]~_Duplicate_1                             ; Q                ;                       ;
-; LT24Display:Display|displayData[10]                               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[9]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[10]~_Duplicate_1                  ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[10]~_Duplicate_2                             ; Q                ;                       ;
-; LT24Display:Display|displayData[10]~_Duplicate_1                  ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[10]~output                                                          ; I                ;                       ;
-; LT24Display:Display|displayData[10]~_Duplicate_2                  ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[8]~output                                                           ; I                ;                       ;
-; LT24Display:Display|displayData[11]                               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_1                             ; Q                ;                       ;
-; LT24Display:Display|displayData[11]                               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[12]~output                                                          ; I                ;                       ;
-; LT24Display:Display|displayData[11]~_Duplicate_1                  ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_2                             ; Q                ;                       ;
-; LT24Display:Display|displayData[11]~_Duplicate_1                  ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[14]~output                                                          ; I                ;                       ;
-; LT24Display:Display|displayData[11]~_Duplicate_2                  ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_3                             ; Q                ;                       ;
-; LT24Display:Display|displayData[11]~_Duplicate_2                  ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[11]~output                                                          ; I                ;                       ;
-; LT24Display:Display|displayData[11]~_Duplicate_3                  ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_4                             ; Q                ;                       ;
-; LT24Display:Display|displayData[11]~_Duplicate_3                  ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[13]~output                                                          ; I                ;                       ;
-; LT24Display:Display|displayData[11]~_Duplicate_4                  ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[15]~output                                                          ; I                ;                       ;
-; LT24Display:Display|displayRegSelect                              ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayRegSelect~_Duplicate_1                            ; Q                ;                       ;
-; LT24Display:Display|displayRegSelect                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24RS~output                                                                ; I                ;                       ;
-; LT24Display:Display|displayRegSelect                              ; Inverted        ; Register Packing                                  ; Timing optimization        ; Q         ;                ;                                                                              ;                  ;                       ;
-; Ball:GameBall|ball_y[6]                                           ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Ball:GameBall|ball_y[6]~DUPLICATE                                            ;                  ;                       ;
-; ClockDivider:GameClock|count[1]                                   ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; ClockDivider:GameClock|count[1]~DUPLICATE                                    ;                  ;                       ;
-; ClockDivider:GameClock|count[14]                                  ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; ClockDivider:GameClock|count[14]~DUPLICATE                                   ;                  ;                       ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[8] ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[8]~DUPLICATE  ;                  ;                       ;
-; LT24Display:Display|displayWrite                                  ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|displayWrite~DUPLICATE                                   ;                  ;                       ;
-; LT24Display:Display|initDataRomAddr[3]                            ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|initDataRomAddr[3]~DUPLICATE                             ;                  ;                       ;
-; LT24Display:Display|stateMachine.CASET_STATE                      ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|stateMachine.CASET_STATE~DUPLICATE                       ;                  ;                       ;
-; LT24Display:Display|stateMachine.INIT_STATE                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|stateMachine.INIT_STATE~DUPLICATE                        ;                  ;                       ;
-; LT24Display:Display|stateMachine.PASET_STATE                      ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|stateMachine.PASET_STATE~DUPLICATE                       ;                  ;                       ;
-; LT24Display:Display|stateMachine.XLADDR_STATE                     ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|stateMachine.XLADDR_STATE~DUPLICATE                      ;                  ;                       ;
-; Xaddr:GameXaddr|x_addr[0]                                         ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Xaddr:GameXaddr|x_addr[0]~DUPLICATE                                          ;                  ;                       ;
-; Xaddr:GameXaddr|x_addr[7]                                         ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Xaddr:GameXaddr|x_addr[7]~DUPLICATE                                          ;                  ;                       ;
-; Yaddr:GameYaddr|y_addr[0]                                         ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Yaddr:GameYaddr|y_addr[0]~DUPLICATE                                          ;                  ;                       ;
-; Yaddr:GameYaddr|y_addr[1]                                         ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Yaddr:GameYaddr|y_addr[1]~DUPLICATE                                          ;                  ;                       ;
-; pixelWrite                                                        ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; pixelWrite~DUPLICATE                                                         ;                  ;                       ;
-+-------------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------+------------------+-----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                                                                              ;
++-----------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------+------------------+-----------------------+
+; Node                                                            ; Action          ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                                             ; Destination Port ; Destination Port Name ;
++-----------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------+------------------+-----------------------+
+; clock~inputCLKENA0                                              ; Created         ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                              ;                  ;                       ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly~_Duplicate_1 ; Q                ;                       ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Wr_n~output                                                              ; I                ;                       ;
+; LT24Display:Display|displayData[0]                              ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[0]~_Duplicate_1                              ; Q                ;                       ;
+; LT24Display:Display|displayData[0]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[0]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[1]                              ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[1]~_Duplicate_1                              ; Q                ;                       ;
+; LT24Display:Display|displayData[1]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[1]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[2]                              ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[2]~_Duplicate_1                              ; Q                ;                       ;
+; LT24Display:Display|displayData[2]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[2]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[3]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[3]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[4]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[4]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[5]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[5]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[6]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[6]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[7]                              ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[7]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[10]                             ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[10]~_Duplicate_1                             ; Q                ;                       ;
+; LT24Display:Display|displayData[10]                             ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[9]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[10]~_Duplicate_1                ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[10]~_Duplicate_2                             ; Q                ;                       ;
+; LT24Display:Display|displayData[10]~_Duplicate_1                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[10]~output                                                          ; I                ;                       ;
+; LT24Display:Display|displayData[10]~_Duplicate_2                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[8]~output                                                           ; I                ;                       ;
+; LT24Display:Display|displayData[11]                             ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_1                             ; Q                ;                       ;
+; LT24Display:Display|displayData[11]                             ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[12]~output                                                          ; I                ;                       ;
+; LT24Display:Display|displayData[11]~_Duplicate_1                ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_2                             ; Q                ;                       ;
+; LT24Display:Display|displayData[11]~_Duplicate_1                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[14]~output                                                          ; I                ;                       ;
+; LT24Display:Display|displayData[11]~_Duplicate_2                ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_3                             ; Q                ;                       ;
+; LT24Display:Display|displayData[11]~_Duplicate_2                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[11]~output                                                          ; I                ;                       ;
+; LT24Display:Display|displayData[11]~_Duplicate_3                ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayData[11]~_Duplicate_4                             ; Q                ;                       ;
+; LT24Display:Display|displayData[11]~_Duplicate_3                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[13]~output                                                          ; I                ;                       ;
+; LT24Display:Display|displayData[11]~_Duplicate_4                ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Data[15]~output                                                          ; I                ;                       ;
+; LT24Display:Display|displayRegSelect                            ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24Display:Display|displayRegSelect~_Duplicate_1                            ; Q                ;                       ;
+; LT24Display:Display|displayRegSelect                            ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; LT24RS~output                                                                ; I                ;                       ;
+; LT24Display:Display|displayRegSelect                            ; Inverted        ; Register Packing                                  ; Timing optimization        ; Q         ;                ;                                                                              ;                  ;                       ;
+; Ball:GameBall|ball_x[6]                                         ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Ball:GameBall|ball_x[6]~DUPLICATE                                            ;                  ;                       ;
+; Ball:GameBall|ball_y[4]                                         ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Ball:GameBall|ball_y[4]~DUPLICATE                                            ;                  ;                       ;
+; Ball:GameBall|ball_y[5]                                         ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Ball:GameBall|ball_y[5]~DUPLICATE                                            ;                  ;                       ;
+; ClockDivider:GameClock|count[1]                                 ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; ClockDivider:GameClock|count[1]~DUPLICATE                                    ;                  ;                       ;
+; ClockDivider:GameClock|count[2]                                 ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; ClockDivider:GameClock|count[2]~DUPLICATE                                    ;                  ;                       ;
+; ClockDivider:GameClock|count[12]                                ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; ClockDivider:GameClock|count[12]~DUPLICATE                                   ;                  ;                       ;
+; ClockDivider:GameClock|count[14]                                ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; ClockDivider:GameClock|count[14]~DUPLICATE                                   ;                  ;                       ;
+; LT24Display:Display|displayInitialised                          ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|displayInitialised~DUPLICATE                             ;                  ;                       ;
+; LT24Display:Display|initDataRomAddr[1]                          ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|initDataRomAddr[1]~DUPLICATE                             ;                  ;                       ;
+; LT24Display:Display|initDataRomAddr[2]                          ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|initDataRomAddr[2]~DUPLICATE                             ;                  ;                       ;
+; LT24Display:Display|pixelDataTemp[0]                            ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|pixelDataTemp[0]~DUPLICATE                               ;                  ;                       ;
+; LT24Display:Display|pixelDataTemp[10]                           ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|pixelDataTemp[10]~DUPLICATE                              ;                  ;                       ;
+; LT24Display:Display|stateMachine.CASET_STATE                    ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|stateMachine.CASET_STATE~DUPLICATE                       ;                  ;                       ;
+; LT24Display:Display|stateMachine.XLADDR_STATE                   ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Display:Display|stateMachine.XLADDR_STATE~DUPLICATE                      ;                  ;                       ;
+; Xaddr:GameXaddr|x_addr[1]                                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Xaddr:GameXaddr|x_addr[1]~DUPLICATE                                          ;                  ;                       ;
+; Xaddr:GameXaddr|x_addr[6]                                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Xaddr:GameXaddr|x_addr[6]~DUPLICATE                                          ;                  ;                       ;
+; Xaddr:GameXaddr|x_addr[7]                                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Xaddr:GameXaddr|x_addr[7]~DUPLICATE                                          ;                  ;                       ;
+; Yaddr:GameYaddr|y_addr[1]                                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Yaddr:GameYaddr|y_addr[1]~DUPLICATE                                          ;                  ;                       ;
+; Yaddr:GameYaddr|y_addr[2]                                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Yaddr:GameYaddr|y_addr[2]~DUPLICATE                                          ;                  ;                       ;
+; Yaddr:GameYaddr|y_addr[3]                                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Yaddr:GameYaddr|y_addr[3]~DUPLICATE                                          ;                  ;                       ;
+; Yaddr:GameYaddr|y_addr[8]                                       ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Yaddr:GameYaddr|y_addr[8]~DUPLICATE                                          ;                  ;                       ;
++-----------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------+------------------+-----------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -223,8 +229,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 672 ) ; 0.00 % ( 0 / 672 )         ; 0.00 % ( 0 / 672 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 672 ) ; 0.00 % ( 0 / 672 )         ; 0.00 % ( 0 / 672 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 687 ) ; 0.00 % ( 0 / 687 )         ; 0.00 % ( 0 / 687 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 687 ) ; 0.00 % ( 0 / 687 )         ; 0.00 % ( 0 / 687 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -247,7 +253,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 672 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 687 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -255,7 +261,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_files/Pong.pin.
+The pin-out file can be found in E:/Documents/GitHub/Pong/output_files/Pong.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -263,14 +269,14 @@ The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_file
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 251 / 32,070       ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 251                ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 256 / 32,070       ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 84                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 165                ;       ;
-;         [c] ALMs used for registers                         ; 7                  ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 260 / 32,070       ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 260                ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 267 / 32,070       ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 83                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 176                ;       ;
+;         [c] ALMs used for registers                         ; 8                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 5 / 32,070         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 32,070         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32,070         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -279,25 +285,25 @@ The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_file
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 31 / 3,207         ; < 1 % ;
-;     -- Logic LABs                                           ; 31                 ;       ;
+; Total LABs:  partially or completely used                   ; 34 / 3,207         ; 1 %   ;
+;     -- Logic LABs                                           ; 34                 ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 429                ;       ;
+; Combinational ALUT usage for logic                          ; 443                ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
-;     -- 6 input functions                                    ; 75                 ;       ;
-;     -- 5 input functions                                    ; 53                 ;       ;
-;     -- 4 input functions                                    ; 66                 ;       ;
-;     -- <=3 input functions                                  ; 235                ;       ;
-; Combinational ALUT usage for route-throughs                 ; 3                  ;       ;
+;     -- 6 input functions                                    ; 80                 ;       ;
+;     -- 5 input functions                                    ; 45                 ;       ;
+;     -- 4 input functions                                    ; 70                 ;       ;
+;     -- <=3 input functions                                  ; 248                ;       ;
+; Combinational ALUT usage for route-throughs                 ; 2                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 195                ;       ;
+; Dedicated logic registers                                   ; 202                ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 180 / 64,140       ; < 1 % ;
-;         -- Secondary logic registers                        ; 15 / 64,140        ; < 1 % ;
+;         -- Primary logic registers                          ; 181 / 64,140       ; < 1 % ;
+;         -- Secondary logic registers                        ; 21 / 64,140        ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 180                ;       ;
-;         -- Routing optimization registers                   ; 15                 ;       ;
+;         -- Design implementation registers                  ; 181                ;       ;
+;         -- Routing optimization registers                   ; 21                 ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 29 / 457           ; 6 %   ;
@@ -354,11 +360,11 @@ The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_file
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.1% / 0.1% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 3.6% / 4.2% / 2.0% ;       ;
-; Maximum fan-out                                             ; 193                ;       ;
-; Highest non-global fan-out                                  ; 110                ;       ;
-; Total fan-out                                               ; 2382               ;       ;
-; Average fan-out                                             ; 3.38               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 4.6% / 5.1% / 3.0% ;       ;
+; Maximum fan-out                                             ; 165                ;       ;
+; Highest non-global fan-out                                  ; 120                ;       ;
+; Total fan-out                                               ; 2455               ;       ;
+; Average fan-out                                             ; 3.39               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -367,14 +373,14 @@ The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_file
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Statistic                                                   ; Top                   ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+-----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 251 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 251                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 256 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 84                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 165                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 7                     ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 260 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 260                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 267 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 83                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 176                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 8                     ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 5 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32070 ( 0 % )     ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
@@ -383,28 +389,28 @@ The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_file
 ;                                                             ;                       ;                                ;
 ; Difficulty packing design                                   ; Low                   ; Low                            ;
 ;                                                             ;                       ;                                ;
-; Total LABs:  partially or completely used                   ; 31 / 3207 ( < 1 % )   ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 31                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 34 / 3207 ( 1 % )     ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 34                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
-; Combinational ALUT usage for logic                          ; 429                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 443                   ; 0                              ;
 ;     -- 7 input functions                                    ; 0                     ; 0                              ;
-;     -- 6 input functions                                    ; 75                    ; 0                              ;
-;     -- 5 input functions                                    ; 53                    ; 0                              ;
-;     -- 4 input functions                                    ; 66                    ; 0                              ;
-;     -- <=3 input functions                                  ; 235                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 3                     ; 0                              ;
+;     -- 6 input functions                                    ; 80                    ; 0                              ;
+;     -- 5 input functions                                    ; 45                    ; 0                              ;
+;     -- 4 input functions                                    ; 70                    ; 0                              ;
+;     -- <=3 input functions                                  ; 248                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 2                     ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
-;         -- Primary logic registers                          ; 180 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 15 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Primary logic registers                          ; 181 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 21 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
-;         -- Design implementation registers                  ; 180                   ; 0                              ;
-;         -- Routing optimization registers                   ; 15                    ; 0                              ;
+;         -- Design implementation registers                  ; 181                   ; 0                              ;
+;         -- Routing optimization registers                   ; 21                    ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -422,8 +428,8 @@ The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_file
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 2382                  ; 0                              ;
-;     -- Registered Connections                               ; 996                   ; 0                              ;
+;     -- Total Connections                                    ; 2455                  ; 0                              ;
+;     -- Registered Connections                               ; 1084                  ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -455,7 +461,7 @@ The pin-out file can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_file
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; clock         ; AA16  ; 4A       ; 56           ; 0            ; 0            ; 194                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; clock         ; AA16  ; 4A       ; 56           ; 0            ; 0            ; 166                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; globalReset   ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 4                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; player_1_down ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; player_1_up   ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 34                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
@@ -1452,10 +1458,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; LT24LCDOn     ; Incomplete set of assignments ;
 ; clock         ; Incomplete set of assignments ;
 ; globalReset   ; Incomplete set of assignments ;
-; player_1_up   ; Incomplete set of assignments ;
-; player_1_down ; Incomplete set of assignments ;
 ; player_2_up   ; Incomplete set of assignments ;
 ; player_2_down ; Incomplete set of assignments ;
+; player_1_up   ; Incomplete set of assignments ;
+; player_1_down ; Incomplete set of assignments ;
 +---------------+-------------------------------+
 
 
@@ -1464,17 +1470,17 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                 ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name          ; Library Name ;
 +--------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
-; |Pong                                      ; 250.5 (3.2)          ; 254.5 (4.6)                      ; 4.0 (1.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 429 (6)             ; 195 (5)                   ; 18 (18)       ; 0                 ; 0     ; 0          ; 29   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
-;    |Ball:GameBall|                         ; 20.7 (20.7)          ; 20.7 (20.7)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 31 (31)             ; 19 (19)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
-;    |ClockDivider:GameClock|                ; 17.0 (17.0)          ; 17.5 (17.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 30 (30)             ; 27 (27)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|ClockDivider:GameClock                                 ; ClockDivider         ; work         ;
-;    |Graphics:GameGraphics|                 ; 68.2 (68.2)          ; 68.2 (68.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 109 (109)           ; 3 (3)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
-;    |LT24Display:Display|                   ; 72.8 (34.2)          ; 75.3 (35.2)                      ; 2.5 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 118 (59)            ; 88 (50)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display                                    ; LT24Display          ; work         ;
-;       |LT24DisplayInterface:LT24Interface| ; 15.7 (15.7)          ; 15.7 (15.7)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 31 (31)             ; 25 (25)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24DisplayInterface:LT24Interface ; LT24DisplayInterface ; work         ;
-;       |LT24InitialData:initDataRom|        ; 22.7 (22.7)          ; 22.7 (22.7)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 27 (27)             ; 9 (9)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24InitialData:initDataRom        ; LT24InitialData      ; work         ;
-;       |ResetSynchroniser:resetGen|         ; 0.3 (0.3)            ; 1.8 (1.8)                        ; 1.5 (1.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|ResetSynchroniser:resetGen         ; ResetSynchroniser    ; work         ;
-;    |Paddles:GamePaddles|                   ; 58.7 (58.7)          ; 58.7 (58.7)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 116 (116)           ; 32 (32)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Paddles:GamePaddles                                    ; Paddles              ; work         ;
-;    |Xaddr:GameXaddr|                       ; 4.3 (4.3)            ; 4.5 (4.5)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 9 (9)               ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Xaddr:GameXaddr                                        ; Xaddr                ; work         ;
-;    |Yaddr:GameYaddr|                       ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 11 (11)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Yaddr:GameYaddr                                        ; Yaddr                ; work         ;
+; |Pong                                      ; 260.0 (3.0)          ; 266.0 (3.5)                      ; 6.0 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 443 (4)             ; 202 (4)                   ; 18 (18)       ; 0                 ; 0     ; 0          ; 29   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
+;    |Ball:GameBall|                         ; 33.4 (33.4)          ; 34.6 (34.6)                      ; 1.2 (1.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 50 (50)             ; 22 (22)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
+;    |ClockDivider:GameClock|                ; 17.0 (17.0)          ; 17.5 (17.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 30 (30)             ; 29 (29)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|ClockDivider:GameClock                                 ; ClockDivider         ; work         ;
+;    |Graphics:GameGraphics|                 ; 65.1 (65.1)          ; 66.4 (66.4)                      ; 1.3 (1.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 105 (105)           ; 3 (3)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
+;    |LT24Display:Display|                   ; 73.3 (34.8)          ; 77.3 (35.8)                      ; 4.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 119 (60)            ; 88 (51)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display                                    ; LT24Display          ; work         ;
+;       |LT24DisplayInterface:LT24Interface| ; 15.7 (15.7)          ; 17.0 (17.0)                      ; 1.3 (1.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 31 (31)             ; 24 (24)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24DisplayInterface:LT24Interface ; LT24DisplayInterface ; work         ;
+;       |LT24InitialData:initDataRom|        ; 22.3 (22.3)          ; 22.5 (22.5)                      ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 27 (27)             ; 9 (9)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24InitialData:initDataRom        ; LT24InitialData      ; work         ;
+;       |ResetSynchroniser:resetGen|         ; 0.5 (0.5)            ; 2.0 (2.0)                        ; 1.5 (1.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|ResetSynchroniser:resetGen         ; ResetSynchroniser    ; work         ;
+;    |Paddles:GamePaddles|                   ; 57.2 (57.2)          ; 57.2 (57.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 116 (116)           ; 32 (32)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Paddles:GamePaddles                                    ; Paddles              ; work         ;
+;    |Xaddr:GameXaddr|                       ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 9 (9)               ; 11 (11)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Xaddr:GameXaddr                                        ; Xaddr                ; work         ;
+;    |Yaddr:GameYaddr|                       ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 13 (13)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Pong|Yaddr:GameYaddr                                        ; Yaddr                ; work         ;
 +--------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1509,10 +1515,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LT24LCDOn     ; Output   ; -- ; --   ; --   ; -- ; (0)   ; (31)  ; --     ; --                     ; --                       ;
 ; clock         ; Input    ; -- ; (0)  ; (0)  ; -- ; --    ; --    ; --     ; --                     ; --                       ;
 ; globalReset   ; Input    ; -- ; (0)  ; --   ; -- ; --    ; --    ; --     ; --                     ; --                       ;
-; player_1_up   ; Input    ; -- ; --   ; (0)  ; -- ; --    ; --    ; --     ; --                     ; --                       ;
+; player_2_up   ; Input    ; -- ; --   ; (0)  ; -- ; --    ; --    ; --     ; --                     ; --                       ;
+; player_2_down ; Input    ; -- ; (0)  ; --   ; -- ; --    ; --    ; --     ; --                     ; --                       ;
+; player_1_up   ; Input    ; -- ; (0)  ; --   ; -- ; --    ; --    ; --     ; --                     ; --                       ;
 ; player_1_down ; Input    ; -- ; (0)  ; --   ; -- ; --    ; --    ; --     ; --                     ; --                       ;
-; player_2_up   ; Input    ; -- ; (0)  ; --   ; -- ; --    ; --    ; --     ; --                     ; --                       ;
-; player_2_down ; Input    ; -- ; --   ; (0)  ; -- ; --    ; --    ; --     ; --                     ; --                       ;
 +---------------+----------+----+------+------+----+-------+-------+--------+------------------------+--------------------------+
 
 
@@ -1528,111 +1534,110 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2] ; 0                 ; 0       ;
 ;      - LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1] ; 0                 ; 0       ;
 ;      - LT24Display:Display|ResetSynchroniser:resetGen|resetSync[0] ; 0                 ; 0       ;
-; player_1_up                                                        ;                   ;         ;
-;      - Paddles:GamePaddles|Add8~5                                  ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add8~1                                  ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add8~17                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add8~13                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add8~9                                  ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add8~29                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add8~25                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add8~21                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~29                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~25                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~21                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~17                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~13                                 ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~9                                  ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~1                                  ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|Add9~5                                  ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~0                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~0                            ; 1                 ; 0       ;
+; player_2_up                                                        ;                   ;         ;
+;      - Paddles:GamePaddles|Add4~9                                  ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add4~5                                  ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add4~1                                  ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add4~29                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add4~25                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add4~21                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add4~17                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add4~13                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~29                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~25                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~21                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~17                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~13                                 ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~9                                  ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~1                                  ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|Add5~5                                  ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_ls~0                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~0                            ; 1                 ; 0       ;
 ;      - Paddles:GamePaddles|always0~0                               ; 1                 ; 0       ;
 ;      - Paddles:GamePaddles|always0~1                               ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~1                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~2                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~3                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~4                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~5                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~6                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_ls~7                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~1                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~2                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~3                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~4                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~5                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~6                            ; 1                 ; 0       ;
-;      - Paddles:GamePaddles|paddleD_rs~7                            ; 1                 ; 0       ;
-; player_1_down                                                      ;                   ;         ;
+;      - Paddles:GamePaddles|paddleU_ls~1                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_ls~2                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_ls~3                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_ls~4                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_ls~5                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_ls~6                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_ls~7                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~1                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~2                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~3                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~4                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~5                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~6                            ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleU_rs~7                            ; 1                 ; 0       ;
+; player_2_down                                                      ;                   ;         ;
 ;      - Paddles:GamePaddles|always0~1                               ; 0                 ; 0       ;
-; player_2_up                                                        ;                   ;         ;
-;      - Paddles:GamePaddles|Add4~5                                  ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add4~1                                  ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add4~17                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add4~13                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add4~9                                  ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add4~29                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add4~25                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add4~21                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~29                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~25                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~21                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~17                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~13                                 ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~9                                  ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~1                                  ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|Add5~5                                  ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~0                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~0                            ; 0                 ; 0       ;
+; player_1_up                                                        ;                   ;         ;
+;      - Paddles:GamePaddles|Add8~17                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add8~13                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add8~9                                  ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add8~5                                  ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add8~29                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add8~25                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add8~21                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add8~1                                  ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~29                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~25                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~21                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~17                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~13                                 ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~9                                  ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~1                                  ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|Add9~5                                  ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~0                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~0                            ; 0                 ; 0       ;
 ;      - Paddles:GamePaddles|always0~2                               ; 0                 ; 0       ;
 ;      - Paddles:GamePaddles|always0~3                               ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~1                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~2                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~3                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~4                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~5                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~6                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_ls~7                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~1                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~2                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~3                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~4                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~5                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~6                            ; 0                 ; 0       ;
-;      - Paddles:GamePaddles|paddleU_rs~7                            ; 0                 ; 0       ;
-; player_2_down                                                      ;                   ;         ;
-;      - Paddles:GamePaddles|always0~3                               ; 1                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~1                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~2                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~3                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~4                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~5                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~6                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_ls~7                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~1                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~2                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~3                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~4                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~5                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~6                            ; 0                 ; 0       ;
+;      - Paddles:GamePaddles|paddleD_rs~7                            ; 0                 ; 0       ;
+; player_1_down                                                      ;                   ;         ;
+;      - Paddles:GamePaddles|always0~3                               ; 0                 ; 0       ;
 +--------------------------------------------------------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                              ;
-+--------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                                               ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Ball:GameBall|direction_h~0                                        ; LABCELL_X55_Y3_N6  ; 92      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; ClockDivider:GameClock|Equal0~4                                    ; LABCELL_X51_Y1_N54 ; 27      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; ClockDivider:GameClock|clk_out                                     ; FF_X51_Y2_N29      ; 20      ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; Graphics:GameGraphics|pixel_rgb~2                                  ; LABCELL_X53_Y2_N36 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|LessThan0~5 ; LABCELL_X56_Y2_N0  ; 24      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|ready       ; LABCELL_X56_Y2_N12 ; 27      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3]        ; FF_X45_Y1_N2       ; 110     ; Async. clear, Async. load ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|Selector1~0                                    ; LABCELL_X57_Y3_N39 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|displayData[11]~7                              ; LABCELL_X55_Y3_N3  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|displayData[5]~4                               ; LABCELL_X55_Y3_N21 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|displayData[7]~6                               ; LABCELL_X55_Y3_N18 ; 3       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|pixelReady                                     ; FF_X55_Y3_N38      ; 15      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|stateMachine.LOAD_STATE                        ; FF_X57_Y3_N32      ; 22      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; LT24Display:Display|xAddrTemp[0]~0                                 ; LABCELL_X56_Y3_N21 ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; Paddles:GamePaddles|always0~1                                      ; LABCELL_X43_Y3_N6  ; 16      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; Paddles:GamePaddles|always0~3                                      ; LABCELL_X46_Y1_N36 ; 16      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; Xaddr:GameXaddr|LessThan0~0                                        ; LABCELL_X50_Y3_N54 ; 10      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; Yaddr:GameYaddr|LessThan0~0                                        ; LABCELL_X51_Y2_N12 ; 11      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; YaddrEN                                                            ; LABCELL_X50_Y3_N30 ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; clock                                                              ; PIN_AA16           ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; clock                                                              ; PIN_AA16           ; 193     ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; globalReset                                                        ; PIN_AB12           ; 4       ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-+--------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                               ;
++--------------------------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                               ; Location            ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; ClockDivider:GameClock|Equal0~4                                    ; MLABCELL_X47_Y3_N12 ; 29      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; ClockDivider:GameClock|clk_out                                     ; FF_X47_Y2_N53       ; 55      ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|LessThan0~5 ; LABCELL_X55_Y1_N24  ; 23      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|ready       ; LABCELL_X55_Y1_N18  ; 26      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3]        ; FF_X51_Y3_N2        ; 120     ; Async. clear, Async. load ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|Selector1~0                                    ; MLABCELL_X52_Y1_N57 ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|displayData[11]~7                              ; LABCELL_X51_Y1_N0   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|displayData[5]~4                               ; MLABCELL_X52_Y1_N27 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|displayData[7]~6                               ; LABCELL_X51_Y1_N21  ; 3       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|pixelReady                                     ; FF_X52_Y1_N2        ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|resetApp                                       ; LABCELL_X53_Y1_N39  ; 99      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|stateMachine.LOAD_STATE                        ; FF_X52_Y1_N8        ; 23      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; LT24Display:Display|xAddrTemp[0]~0                                 ; LABCELL_X55_Y1_N9   ; 22      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Paddles:GamePaddles|always0~1                                      ; LABCELL_X46_Y3_N36  ; 16      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; Paddles:GamePaddles|always0~3                                      ; LABCELL_X45_Y2_N36  ; 16      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; Xaddr:GameXaddr|LessThan0~0                                        ; MLABCELL_X52_Y3_N27 ; 11      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; Yaddr:GameYaddr|LessThan0~0                                        ; LABCELL_X48_Y4_N0   ; 13      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; YaddrEN                                                            ; LABCELL_X51_Y3_N6   ; 13      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; clock                                                              ; PIN_AA16            ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; clock                                                              ; PIN_AA16            ; 165     ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; globalReset                                                        ; PIN_AB12            ; 4       ; Async. clear              ; no     ; --                   ; --               ; --                        ;
++--------------------------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -1640,7 +1645,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------+----------+---------+----------------------+------------------+---------------------------+
 ; Name  ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------+----------+---------+----------------------+------------------+---------------------------+
-; clock ; PIN_AA16 ; 193     ; Global Clock         ; GCLK6            ; --                        ;
+; clock ; PIN_AA16 ; 165     ; Global Clock         ; GCLK6            ; --                        ;
 +-------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1649,14 +1654,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 579 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 0 / 13,420 ( 0 % )      ;
-; C2 interconnects                            ; 128 / 119,108 ( < 1 % ) ;
-; C4 interconnects                            ; 44 / 56,300 ( < 1 % )   ;
+; Block interconnects                         ; 649 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 1 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 155 / 119,108 ( < 1 % ) ;
+; C4 interconnects                            ; 58 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 96 / 289,320 ( < 1 % )  ;
+; Direct links                                ; 87 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -1712,13 +1717,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 234 / 84,580 ( < 1 % )  ;
+; Local interconnects                         ; 231 / 84,580 ( < 1 % )  ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 14 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 12 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 206 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 228 / 266,960 ( < 1 % ) ;
-; Spine clocks                                ; 3 / 360 ( < 1 % )       ;
+; R14 interconnects                           ; 13 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 11 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 235 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 268 / 266,960 ( < 1 % ) ;
+; Spine clocks                                ; 2 / 360 ( < 1 % )       ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
 
@@ -1807,10 +1812,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LT24LCDOn          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; clock              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; globalReset        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; player_1_up        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; player_1_down      ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; player_2_up        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; player_2_down      ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; player_1_up        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; player_1_down      ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
 
 
@@ -1862,7 +1867,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clock50         ; clock50              ; 17.8              ;
+; clock50         ; clock50              ; 13.6              ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -1873,105 +1878,108 @@ This will disable optimization of problematic paths and expose them for further 
 +------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
 ; Source Register                                                              ; Destination Register                                               ; Delay Added in ns ;
 +------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
-; ClockDivider:GameClock|count[17]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.045             ;
-; ClockDivider:GameClock|count[16]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.045             ;
-; ClockDivider:GameClock|count[12]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.045             ;
-; ClockDivider:GameClock|count[11]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.045             ;
-; ClockDivider:GameClock|count[10]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.045             ;
-; ClockDivider:GameClock|count[1]                                              ; ClockDivider:GameClock|clk_out                                     ; 1.045             ;
-; ClockDivider:GameClock|count[22]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.035             ;
-; ClockDivider:GameClock|count[21]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.035             ;
-; ClockDivider:GameClock|count[20]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.035             ;
-; ClockDivider:GameClock|count[23]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.035             ;
-; ClockDivider:GameClock|count[18]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.035             ;
-; ClockDivider:GameClock|count[19]                                             ; ClockDivider:GameClock|clk_out                                     ; 1.035             ;
-; ClockDivider:GameClock|count[13]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.913             ;
-; ClockDivider:GameClock|count[15]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[9]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[8]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[7]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[6]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[5]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[4]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[3]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[2]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[0]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|count[14]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; ClockDivider:GameClock|clk_out                                               ; ClockDivider:GameClock|clk_out                                     ; 0.612             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly~_Duplicate_1 ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.CASET_STATE                                 ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.XHADDR_STATE                                ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.XLADDR_STATE                                ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.PASET_STATE                                 ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.YHADDR_STATE                                ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.YLADDR_STATE                                ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|displayWrite                                             ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[22]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[20]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[21]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[17]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[16]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[15]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[14]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[13]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[12]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[11]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[10]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[9]            ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[8]            ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[7]            ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[18]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[19]           ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.WRITE_STATE                                 ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; LT24Display:Display|stateMachine.LOAD_STATE                                  ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.500             ;
-; pixelWrite                                                                   ; LT24Display:Display|displayWrite                                   ; 0.440             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[1]            ; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[22] ; 0.432             ;
-; Graphics:GameGraphics|pixel_rgb[5]                                           ; pixelData[0]                                                       ; 0.405             ;
-; LT24Display:Display|stateMachine.IDLE_STATE                                  ; LT24Display:Display|stateMachine.LOAD_STATE                        ; 0.402             ;
-; LT24Display:Display|stateMachine.INIT_STATE                                  ; LT24Display:Display|displayData[1]~_Duplicate_1                    ; 0.395             ;
-; LT24Display:Display|initDataRomAddr[3]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[2]        ; 0.374             ;
-; LT24Display:Display|LT24InitialData:initDataRom|initData[8]                  ; LT24Display:Display|displayRegSelect                               ; 0.373             ;
-; LT24Display:Display|displayRegSelect~_Duplicate_1                            ; LT24Display:Display|displayRegSelect                               ; 0.373             ;
-; LT24Display:Display|initDataRomAddr[5]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[2]        ; 0.350             ;
-; LT24Display:Display|initDataRomAddr[4]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[2]        ; 0.350             ;
-; LT24Display:Display|initDataRomAddr[2]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[2]        ; 0.350             ;
-; LT24Display:Display|initDataRomAddr[1]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[2]        ; 0.350             ;
-; LT24Display:Display|initDataRomAddr[0]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[2]        ; 0.350             ;
-; LT24Display:Display|initDataRomAddr[6]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[2]        ; 0.350             ;
-; LT24Display:Display|displayInitialised                                       ; resetApp                                                           ; 0.342             ;
-; Xaddr:GameXaddr|x_addr[6]                                                    ; Graphics:GameGraphics|pixel_rgb[5]                                 ; 0.259             ;
-; Xaddr:GameXaddr|x_addr[5]                                                    ; Graphics:GameGraphics|pixel_rgb[5]                                 ; 0.259             ;
-; Xaddr:GameXaddr|x_addr[4]                                                    ; Graphics:GameGraphics|pixel_rgb[5]                                 ; 0.259             ;
-; Xaddr:GameXaddr|x_addr[3]                                                    ; Graphics:GameGraphics|pixel_rgb[5]                                 ; 0.259             ;
-; Xaddr:GameXaddr|x_addr[2]                                                    ; Graphics:GameGraphics|pixel_rgb[5]                                 ; 0.259             ;
-; Xaddr:GameXaddr|x_addr[1]                                                    ; Graphics:GameGraphics|pixel_rgb[5]                                 ; 0.259             ;
-; Xaddr:GameXaddr|x_addr[7]                                                    ; Graphics:GameGraphics|pixel_rgb[5]                                 ; 0.259             ;
-; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1]                  ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2]        ; 0.253             ;
-; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[0]                  ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1]        ; 0.246             ;
-; Graphics:GameGraphics|pixel_rgb[10]                                          ; pixelData[10]                                                      ; 0.124             ;
-; Graphics:GameGraphics|pixel_rgb[15]                                          ; pixelData[15]                                                      ; 0.119             ;
-; Paddles:GamePaddles|paddleD_rs[5]                                            ; Paddles:GamePaddles|paddleD_rs[7]                                  ; 0.108             ;
-; Paddles:GamePaddles|paddleD_ls[5]                                            ; Paddles:GamePaddles|paddleD_ls[7]                                  ; 0.107             ;
-; Paddles:GamePaddles|paddleD_rs[3]                                            ; Paddles:GamePaddles|paddleD_rs[7]                                  ; 0.107             ;
-; Paddles:GamePaddles|paddleU_ls[3]                                            ; Paddles:GamePaddles|paddleU_ls[7]                                  ; 0.106             ;
-; Paddles:GamePaddles|paddleU_ls[5]                                            ; Paddles:GamePaddles|paddleU_ls[7]                                  ; 0.105             ;
-; Paddles:GamePaddles|paddleD_rs[2]                                            ; Paddles:GamePaddles|paddleD_rs[7]                                  ; 0.104             ;
-; Paddles:GamePaddles|paddleD_rs[6]                                            ; Paddles:GamePaddles|paddleD_rs[7]                                  ; 0.103             ;
-; Paddles:GamePaddles|paddleD_ls[3]                                            ; Paddles:GamePaddles|paddleD_ls[7]                                  ; 0.103             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[6]            ; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[22] ; 0.103             ;
-; Paddles:GamePaddles|paddleU_ls[6]                                            ; Paddles:GamePaddles|paddleU_ls[7]                                  ; 0.101             ;
-; Paddles:GamePaddles|paddleU_ls[2]                                            ; Paddles:GamePaddles|paddleU_ls[7]                                  ; 0.101             ;
-; Paddles:GamePaddles|paddleU_rs[5]                                            ; Paddles:GamePaddles|paddleU_rs[7]                                  ; 0.100             ;
-; Paddles:GamePaddles|paddleU_rs[3]                                            ; Paddles:GamePaddles|paddleU_rs[7]                                  ; 0.100             ;
-; Paddles:GamePaddles|paddleU_rs[2]                                            ; Paddles:GamePaddles|paddleU_rs[7]                                  ; 0.100             ;
-; Paddles:GamePaddles|paddleD_ls[0]                                            ; Paddles:GamePaddles|paddleD_ls[7]                                  ; 0.100             ;
-; Paddles:GamePaddles|paddleD_ls[6]                                            ; Paddles:GamePaddles|paddleD_ls[7]                                  ; 0.099             ;
-; Paddles:GamePaddles|paddleU_rs[6]                                            ; Paddles:GamePaddles|paddleU_rs[7]                                  ; 0.099             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[3]            ; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[22] ; 0.073             ;
-; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[4]            ; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[22] ; 0.067             ;
-; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2]                  ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3]        ; 0.063             ;
+; LT24Display:Display|displayWrite                                             ; LT24Display:Display|displayRegSelect                               ; 2.040             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|writeDly~_Duplicate_1 ; LT24Display:Display|displayRegSelect                               ; 0.819             ;
+; LT24Display:Display|stateMachine.WRITE_STATE                                 ; LT24Display:Display|displayData[10]                                ; 0.595             ;
+; LT24Display:Display|stateMachine.XLADDR_STATE                                ; LT24Display:Display|displayData[10]                                ; 0.587             ;
+; LT24Display:Display|LT24InitialData:initDataRom|initData[8]                  ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|displayRegSelect~_Duplicate_1                            ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|stateMachine.CASET_STATE                                 ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|stateMachine.XHADDR_STATE                                ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|stateMachine.PASET_STATE                                 ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|stateMachine.YHADDR_STATE                                ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[22]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[20]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[21]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[17]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[16]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[15]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[14]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[13]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[12]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[11]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[10]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[9]            ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[8]            ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[7]            ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[18]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[19]           ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; LT24Display:Display|stateMachine.LOAD_STATE                                  ; LT24Display:Display|displayRegSelect                               ; 0.554             ;
+; Paddles:GamePaddles|paddleU_ls[7]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Paddles:GamePaddles|paddleU_ls[6]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Paddles:GamePaddles|paddleU_ls[5]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Paddles:GamePaddles|paddleU_ls[4]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Paddles:GamePaddles|paddleU_ls[3]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Paddles:GamePaddles|paddleU_ls[2]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Paddles:GamePaddles|paddleU_ls[1]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Paddles:GamePaddles|paddleU_ls[0]                                            ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[6]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[5]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[4]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[3]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[2]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[1]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[7]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; Xaddr:GameXaddr|x_addr[0]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.440             ;
+; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[1]            ; LT24Display:Display|LT24DisplayInterface:LT24Interface|counter[22] ; 0.421             ;
+; LT24Display:Display|stateMachine.INIT_STATE                                  ; LT24Display:Display|stateMachine.LOAD_STATE                        ; 0.415             ;
+; LT24Display:Display|stateMachine.IDLE_STATE                                  ; LT24Display:Display|displayWrite                                   ; 0.407             ;
+; Yaddr:GameYaddr|y_addr[8]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; Yaddr:GameYaddr|y_addr[6]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; Yaddr:GameYaddr|y_addr[5]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; Yaddr:GameYaddr|y_addr[4]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; Yaddr:GameYaddr|y_addr[3]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; Yaddr:GameYaddr|y_addr[2]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; Yaddr:GameYaddr|y_addr[1]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; Yaddr:GameYaddr|y_addr[7]                                                    ; Graphics:GameGraphics|pixel_rgb[10]                                ; 0.396             ;
+; LT24Display:Display|stateMachine.YLADDR_STATE                                ; LT24Display:Display|displayData[10]                                ; 0.361             ;
+; pixelWrite                                                                   ; LT24Display:Display|displayData[10]                                ; 0.351             ;
+; LT24Display:Display|initDataRomAddr[5]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[6]        ; 0.337             ;
+; LT24Display:Display|initDataRomAddr[4]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[6]        ; 0.337             ;
+; LT24Display:Display|initDataRomAddr[2]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[6]        ; 0.337             ;
+; LT24Display:Display|initDataRomAddr[0]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[6]        ; 0.337             ;
+; LT24Display:Display|initDataRomAddr[3]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[6]        ; 0.337             ;
+; LT24Display:Display|initDataRomAddr[6]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[6]        ; 0.337             ;
+; ClockDivider:GameClock|count[22]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[23]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[20]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[19]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[18]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[17]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[16]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[15]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[14]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[13]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[12]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[11]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[10]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[9]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[8]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[7]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[6]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[5]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[4]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[3]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[2]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[1]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[0]                                              ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|count[21]                                             ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; ClockDivider:GameClock|clk_out                                               ; ClockDivider:GameClock|clk_out                                     ; 0.321             ;
+; LT24Display:Display|displayInitialised                                       ; ClockDivider:GameClock|count[10]                                   ; 0.296             ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2]                  ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3]        ; 0.274             ;
+; Graphics:GameGraphics|pixel_rgb[15]                                          ; pixelData[15]                                                      ; 0.261             ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[0]                  ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1]        ; 0.259             ;
+; LT24Display:Display|initDataRomAddr[1]                                       ; LT24Display:Display|LT24InitialData:initDataRom|initData[6]        ; 0.192             ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3]                  ; LT24Display:Display|displayData[5]                                 ; 0.156             ;
+; Graphics:GameGraphics|pixel_rgb[5]                                           ; pixelData[0]                                                       ; 0.115             ;
+; LT24Display:Display|xAddrTemp[2]                                             ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.112             ;
+; LT24Display:Display|LT24InitialData:initDataRom|initData[2]                  ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.112             ;
+; LT24Display:Display|yAddrTemp[2]                                             ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.112             ;
+; LT24Display:Display|pixelDataTemp[0]                                         ; LT24Display:Display|displayData[2]~_Duplicate_1                    ; 0.112             ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1]                  ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2]        ; 0.110             ;
+; pixelData[10]                                                                ; LT24Display:Display|pixelDataTemp[10]                              ; 0.107             ;
 +------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 97 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1987,13 +1995,13 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
-    Info (11162): clock~inputCLKENA0 with 168 fanout uses global clock CLKCTRL_G6
+    Info (11162): clock~inputCLKENA0 with 136 fanout uses global clock CLKCTRL_G6
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Info (176233): Starting register packing
 Info (332104): Reading SDC File: 'Pong.sdc'
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Warning (332060): Node: ClockDivider:GameClock|clk_out was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register Ball:GameBall|ball_y[2] is being clocked by ClockDivider:GameClock|clk_out
+    Info (13166): Register Paddles:GamePaddles|paddleU_ls[0] is being clocked by ClockDivider:GameClock|clk_out
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
 Info (332111): Found 1 clocks
@@ -2017,23 +2025,23 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.83 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.75 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:06
-Info (144001): Generated suppressed messages file C:/Users/Lupo/Documents/GitHub/Pong/output_files/Pong.fit.smsg
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:07
+Info (144001): Generated suppressed messages file E:/Documents/GitHub/Pong/output_files/Pong.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 6905 megabytes
-    Info: Processing ended: Thu May 02 17:00:05 2019
+    Info: Peak virtual memory: 6910 megabytes
+    Info: Processing ended: Thu May 02 22:25:18 2019
     Info: Elapsed time: 00:00:44
-    Info: Total CPU time (on all processors): 00:01:26
+    Info: Total CPU time (on all processors): 00:01:23
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_files/Pong.fit.smsg.
+The suppressed messages can be found in E:/Documents/GitHub/Pong/output_files/Pong.fit.smsg.
 
 

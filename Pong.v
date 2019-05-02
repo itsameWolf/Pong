@@ -2,10 +2,6 @@ module Pong #(
 	LCD_WIDTH  = 240;
 	LCD_HEIGHT = 320;
 	MAX_SCORE = 10
-//	BALL_SPEED,
-//	BALL_SIZE,
-//	PADDLE_SPEED,
-//	PADDLE_SIZE
 	)(
 	input wire	clock,
 	
@@ -79,8 +75,8 @@ module Pong #(
 		.clk_out		(game_clock)
 		);
 	
-	wire 			pixel_clock, game_clock;
-	wire [7:0]	paddle_1_y, paddle_2_y;
+	wire 			game_clock;
+	wire [7:0]	paddle_1_x, paddle_2_x;
 	wire [7:0]	ball_x;
 	wire [8:0]	ball_y;
 	
@@ -102,14 +98,14 @@ module Pong #(
 		);
 	
 	Paddles GamePaddles (
-		.clock			(clock),
+		.clock			(game_clock),
 		.reset 			(resetApp),
 		.key3				(player_2_up),
 		.key2				(player_2_down),
 		.key1				(player_1_up),
 		.key0				(player_1_down),
-		.paddleU_pos	(paddle_2_y),
-		.paddleD_pos	(paddle_1_y)
+		.paddleU_pos	(paddle_2_x),
+		.paddleD_pos	(paddle_1_x)
 		);
 		
 	Graphics GameGraphics (
@@ -117,8 +113,8 @@ module Pong #(
 		.reset		(resetApp),
 		.ball_x		(ball_x),
 		.ball_y		(ball_y),
-		.paddle_1_y	(paddle_1_y),
-		.paddle_2_y	(paddle_2_y),
+		.paddle_1_x	(paddle_1_x),
+		.paddle_2_x	(paddle_2_x),
 		.pixel_x		(x_addr),
 		.pixel_y		(y_addr),
 		.pixel_rgb	(graphicOut)

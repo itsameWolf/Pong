@@ -106,7 +106,6 @@ set_global_assignment -name VERILOG_FILE ClockDivider.v
 set_global_assignment -name VERILOG_FILE Pong.v
 set_global_assignment -name VERILOG_FILE BinaryToBCD.v
 set_global_assignment -name VERILOG_FILE Scoreboard.v
-set_global_assignment -name VERILOG_FILE Paddle.v
 set_global_assignment -name VERILOG_FILE Yaddr.v
 set_global_assignment -name VERILOG_FILE Xaddr.v
 set_global_assignment -name VERILOG_FILE Graphics.v

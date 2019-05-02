@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pong
-Thu May 02 16:59:20 2019
+Thu May 02 22:24:33 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -59,13 +59,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 02 16:59:20 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 02 22:24:33 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Pong                                        ;
 ; Top-level Entity Name           ; Pong                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 187                                         ;
+; Total registers                 ; 188                                         ;
 ; Total pins                      ; 29                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -179,24 +179,25 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                       ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
-; Paddles.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Paddles.v      ;         ;
-; LT24Display.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v  ;         ;
-; Ball.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Ball.v         ;         ;
-; ClockDivider.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/ClockDivider.v ;         ;
-; Pong.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Pong.v         ;         ;
-; Yaddr.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Yaddr.v        ;         ;
-; Xaddr.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Xaddr.v        ;         ;
-; Graphics.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v     ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                          ;
++----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path            ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
+; Paddles.v                        ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/Paddles.v      ;         ;
+; LT24Display.v                    ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/LT24Display.v  ;         ;
+; Ball.v                           ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/Ball.v         ;         ;
+; ClockDivider.v                   ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/ClockDivider.v ;         ;
+; Pong.v                           ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/Pong.v         ;         ;
+; Yaddr.v                          ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/Yaddr.v        ;         ;
+; Xaddr.v                          ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/Xaddr.v        ;         ;
+; Graphics.v                       ; yes             ; User Verilog HDL File  ; E:/Documents/GitHub/Pong/Graphics.v     ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -204,24 +205,24 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 252         ;
+; Estimate of Logic utilization (ALMs needed) ; 262         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 425         ;
+; Combinational ALUT usage for logic          ; 439         ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 75          ;
-;     -- 5 input functions                    ; 53          ;
-;     -- 4 input functions                    ; 66          ;
-;     -- <=3 input functions                  ; 231         ;
+;     -- 6 input functions                    ; 80          ;
+;     -- 5 input functions                    ; 45          ;
+;     -- 4 input functions                    ; 70          ;
+;     -- <=3 input functions                  ; 244         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 187         ;
+; Dedicated logic registers                   ; 188         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 29          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 169         ;
-; Total fan-out                               ; 2278        ;
+; Maximum fan-out                             ; 137         ;
+; Total fan-out                               ; 2328        ;
 ; Average fan-out                             ; 3.40        ;
 +---------------------------------------------+-------------+
 
@@ -231,11 +232,11 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name          ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
-; |Pong                                      ; 425 (4)             ; 187 (4)                   ; 0                 ; 0          ; 29   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
-;    |Ball:GameBall|                         ; 31 (31)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
+; |Pong                                      ; 439 (2)             ; 188 (4)                   ; 0                 ; 0          ; 29   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
+;    |Ball:GameBall|                         ; 50 (50)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
 ;    |ClockDivider:GameClock|                ; 30 (30)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|ClockDivider:GameClock                                 ; ClockDivider         ; work         ;
-;    |Graphics:GameGraphics|                 ; 109 (109)           ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
-;    |LT24Display:Display|                   ; 116 (58)            ; 88 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display                                    ; LT24Display          ; work         ;
+;    |Graphics:GameGraphics|                 ; 105 (105)           ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
+;    |LT24Display:Display|                   ; 117 (59)            ; 88 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display                                    ; LT24Display          ; work         ;
 ;       |LT24DisplayInterface:LT24Interface| ; 31 (31)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24DisplayInterface:LT24Interface ; LT24DisplayInterface ; work         ;
 ;       |LT24InitialData:initDataRom|        ; 27 (27)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24InitialData:initDataRom        ; LT24InitialData      ; work         ;
 ;       |ResetSynchroniser:resetGen|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|ResetSynchroniser:resetGen         ; ResetSynchroniser    ; work         ;
@@ -284,13 +285,12 @@ Encoding Type:  One-Hot
 ; LT24Display:Display|pixelDataTemp[1..5]    ; Merged with LT24Display:Display|pixelDataTemp[0]  ;
 ; LT24Display:Display|pixelDataTemp[6..9]    ; Merged with LT24Display:Display|pixelDataTemp[10] ;
 ; LT24Display:Display|pixelDataTemp[12..15]  ; Merged with LT24Display:Display|pixelDataTemp[11] ;
-; Ball:GameBall|ball_x[0]                    ; Merged with Ball:GameBall|ball_y[0]               ;
 ; LT24Display:Display|stateMachine~15        ; Lost fanout                                       ;
 ; LT24Display:Display|stateMachine~16        ; Lost fanout                                       ;
 ; LT24Display:Display|stateMachine~17        ; Lost fanout                                       ;
 ; LT24Display:Display|stateMachine~18        ; Lost fanout                                       ;
 ; LT24Display:Display|stateMachine.CMD_STATE ; Stuck at GND due to stuck port data_in            ;
-; Total Number of Removed Registers = 66     ;                                                   ;
+; Total Number of Removed Registers = 65     ;                                                   ;
 +--------------------------------------------+---------------------------------------------------+
 
 
@@ -299,12 +299,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 187   ;
+; Total registers                              ; 188   ;
 ; Number of registers using Synchronous Clear  ; 48    ;
 ; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 107   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 85    ;
+; Number of registers using Clock Enable       ; 83    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -314,14 +314,13 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------+---------+
 ; Inverted Register                                           ; Fan out ;
 +-------------------------------------------------------------+---------+
-; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3] ; 93      ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3] ; 105     ;
 ; LT24Display:Display|displayRegSelect                        ; 3       ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2] ; 1       ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1] ; 1       ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[0] ; 1       ;
-; Graphics:GameGraphics|pixel_rgb[5]                          ; 2       ;
-; ClockDivider:GameClock|clk_out                              ; 19      ;
-; Total number of inverted registers = 7                      ;         ;
+; ClockDivider:GameClock|clk_out                              ; 52      ;
+; Total number of inverted registers = 6                      ;         ;
 +-------------------------------------------------------------+---------+
 
 
@@ -430,13 +429,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-----------------------------------+
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
-; SIZE           ; 4     ; Signed Integer                    ;
-; MAX_Y          ; 320   ; Signed Integer                    ;
-; MAX_X          ; 240   ; Signed Integer                    ;
-; MIN_Y          ; 0     ; Signed Integer                    ;
+; SIZE           ; 10    ; Signed Integer                    ;
+; MAX_Y          ; 310   ; Signed Integer                    ;
+; MAX_X          ; 239   ; Signed Integer                    ;
+; MIN_Y          ; 10    ; Signed Integer                    ;
 ; MIN_X          ; 0     ; Signed Integer                    ;
-; START_Y        ; 160   ; Signed Integer                    ;
-; START_X        ; 120   ; Signed Integer                    ;
+; START_Y        ; 150   ; Signed Integer                    ;
+; START_X        ; 119   ; Signed Integer                    ;
 +----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -446,7 +445,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-----------+-------------------------------------+
 ; Parameter Name ; Value     ; Type                                ;
 +----------------+-----------+-------------------------------------+
-; paddle_width   ; 000000100 ; Unsigned Binary                     ;
+; paddle_width   ; 000000101 ; Unsigned Binary                     ;
 ; paddle_length  ; 000101000 ; Unsigned Binary                     ;
 ; paddleU_ini    ; 001100100 ; Unsigned Binary                     ;
 ; paddleD_ini    ; 001100100 ; Unsigned Binary                     ;
@@ -459,18 +458,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+--------------------------------+
 ; Parameter Name ; Value            ; Type                           ;
 +----------------+------------------+--------------------------------+
-; BACKGROUND_RGB ; 0000000000111111 ; Unsigned Binary                ;
+; BACKGROUND_RGB ; 0000000000000000 ; Unsigned Binary                ;
 ; BALL_RGB       ; 0000011111000000 ; Unsigned Binary                ;
-; PADDLE_RGB     ; 1111100000000000 ; Unsigned Binary                ;
+; PADDLE_1_RGB   ; 1111100000000000 ; Unsigned Binary                ;
+; PADDLE_2_RGB   ; 0000000000111111 ; Unsigned Binary                ;
 ; BALL_SIZE      ; 10               ; Signed Integer                 ;
-; PADDLE_WIDTH   ; 3                ; Signed Integer                 ;
-; PADDLE_HEIGTH  ; 20               ; Signed Integer                 ;
-; PADDLE_1_X     ; 000001010        ; Unsigned Binary                ;
-; PADDLE_2_X     ; 100110110        ; Unsigned Binary                ;
-; MAX_H          ; 320              ; Signed Integer                 ;
-; MAX_V          ; 240              ; Signed Integer                 ;
-; MIN_H          ; 0                ; Signed Integer                 ;
-; MIN_V          ; 0                ; Signed Integer                 ;
+; PADDLE_WIDTH   ; 5                ; Signed Integer                 ;
+; PADDLE_HEIGTH  ; 40               ; Signed Integer                 ;
+; PADDLE_1_Y     ; 000011110        ; Unsigned Binary                ;
+; PADDLE_2_Y     ; 100100010        ; Unsigned Binary                ;
 +----------------+------------------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -480,8 +476,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port       ; Type  ; Severity ; Details                                                                                                                                            ;
 +------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; player_1_x ; Input ; Warning  ; Input port expression (8 bits) is smaller than the input port (9 bits) it drives.  Extra input bit(s) "player_1_x[8..8]" will be connected to GND. ;
-; player_2_x ; Input ; Warning  ; Input port expression (8 bits) is smaller than the input port (9 bits) it drives.  Extra input bit(s) "player_2_x[8..8]" will be connected to GND. ;
+; player_1_x ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (9 bits) it drives.  Extra input bit(s) "player_1_x[8..1]" will be connected to GND. ;
+; player_2_x ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (9 bits) it drives.  Extra input bit(s) "player_2_x[8..1]" will be connected to GND. ;
 +------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -503,34 +499,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 187                         ;
-;     CLR               ; 18                          ;
+; arriav_ff             ; 188                         ;
+;     CLR               ; 20                          ;
 ;     CLR SCLR          ; 24                          ;
 ;     ENA               ; 20                          ;
-;     ENA CLR           ; 41                          ;
+;     ENA CLR           ; 39                          ;
 ;     ENA CLR SCLR      ; 24                          ;
 ;     SLD               ; 32                          ;
-;     plain             ; 28                          ;
-; arriav_lcell_comb     ; 429                         ;
-;     arith             ; 196                         ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 124                         ;
+;     plain             ; 29                          ;
+; arriav_lcell_comb     ; 442                         ;
+;     arith             ; 209                         ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 122                         ;
 ;         2 data inputs ; 3                           ;
-;         3 data inputs ; 34                          ;
-;         4 data inputs ; 16                          ;
+;         3 data inputs ; 45                          ;
+;         4 data inputs ; 18                          ;
 ;         5 data inputs ; 15                          ;
 ;     normal            ; 233                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 38                          ;
-;         4 data inputs ; 50                          ;
-;         5 data inputs ; 38                          ;
-;         6 data inputs ; 75                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 35                          ;
+;         4 data inputs ; 52                          ;
+;         5 data inputs ; 30                          ;
+;         6 data inputs ; 80                          ;
 ; boundary_port         ; 29                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.20                        ;
-; Average LUT depth     ; 3.30                        ;
+; Max LUT depth         ; 6.70                        ;
+; Average LUT depth     ; 3.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -549,79 +545,79 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 02 16:59:06 2019
+    Info: Processing started: Thu May 02 22:24:20 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pong -c Pong
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file paddles.v
-    Info (12023): Found entity 1: Paddles File: C:/Users/Lupo/Documents/GitHub/Pong/Paddles.v Line: 1
+    Info (12023): Found entity 1: Paddles File: E:/Documents/GitHub/Pong/Paddles.v Line: 1
 Info (12021): Found 4 design units, including 4 entities, in source file lt24display.v
-    Info (12023): Found entity 1: LT24Display File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 86
-    Info (12023): Found entity 2: LT24DisplayInterface File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 409
-    Info (12023): Found entity 3: ResetSynchroniser File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 493
-    Info (12023): Found entity 4: LT24InitialData File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 523
+    Info (12023): Found entity 1: LT24Display File: E:/Documents/GitHub/Pong/LT24Display.v Line: 86
+    Info (12023): Found entity 2: LT24DisplayInterface File: E:/Documents/GitHub/Pong/LT24Display.v Line: 409
+    Info (12023): Found entity 3: ResetSynchroniser File: E:/Documents/GitHub/Pong/LT24Display.v Line: 493
+    Info (12023): Found entity 4: LT24InitialData File: E:/Documents/GitHub/Pong/LT24Display.v Line: 523
 Info (12021): Found 1 design units, including 1 entities, in source file display7segment.v
-    Info (12023): Found entity 1: Display7Segment File: C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v Line: 1
+    Info (12023): Found entity 1: Display7Segment File: E:/Documents/GitHub/Pong/Display7Segment.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ball.v
-    Info (12023): Found entity 1: Ball File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 1
+    Info (12023): Found entity 1: Ball File: E:/Documents/GitHub/Pong/Ball.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
-    Info (12023): Found entity 1: ClockDivider File: C:/Users/Lupo/Documents/GitHub/Pong/ClockDivider.v Line: 1
+    Info (12023): Found entity 1: ClockDivider File: E:/Documents/GitHub/Pong/ClockDivider.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pong.v
-    Info (12023): Found entity 1: Pong File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 1
+    Info (12023): Found entity 1: Pong File: E:/Documents/GitHub/Pong/Pong.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file binarytobcd.v
-    Info (12023): Found entity 1: BinaryToBCD File: C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v Line: 1
+    Info (12023): Found entity 1: BinaryToBCD File: E:/Documents/GitHub/Pong/BinaryToBCD.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file scoreboard.v
-    Info (12023): Found entity 1: Scoreboard File: C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file paddle.v
-    Info (12023): Found entity 1: Paddle File: C:/Users/Lupo/Documents/GitHub/Pong/Paddle.v Line: 1
+    Info (12023): Found entity 1: Scoreboard File: E:/Documents/GitHub/Pong/Scoreboard.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file yaddr.v
-    Info (12023): Found entity 1: Yaddr File: C:/Users/Lupo/Documents/GitHub/Pong/Yaddr.v Line: 1
+    Info (12023): Found entity 1: Yaddr File: E:/Documents/GitHub/Pong/Yaddr.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file xaddr.v
-    Info (12023): Found entity 1: Xaddr File: C:/Users/Lupo/Documents/GitHub/Pong/Xaddr.v Line: 1
+    Info (12023): Found entity 1: Xaddr File: E:/Documents/GitHub/Pong/Xaddr.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file graphics.v
-    Info (12023): Found entity 1: Graphics File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 1
+    Info (12023): Found entity 1: Graphics File: E:/Documents/GitHub/Pong/Graphics.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Pong.v(94): created implicit net for "paddle_1_y" File: E:/Documents/GitHub/Pong/Pong.v Line: 94
+Warning (10236): Verilog HDL Implicit Net warning at Pong.v(95): created implicit net for "paddle_2_y" File: E:/Documents/GitHub/Pong/Pong.v Line: 95
 Info (12127): Elaborating entity "Pong" for the top level hierarchy
-Info (12128): Elaborating entity "LT24Display" for hierarchy "LT24Display:Display" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 55
-Info (12128): Elaborating entity "ResetSynchroniser" for hierarchy "LT24Display:Display|ResetSynchroniser:resetGen" File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 157
-Info (12128): Elaborating entity "LT24InitialData" for hierarchy "LT24Display:Display|LT24InitialData:initDataRom" File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 174
-Info (12128): Elaborating entity "LT24DisplayInterface" for hierarchy "LT24Display:Display|LT24DisplayInterface:LT24Interface" File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 392
-Info (12128): Elaborating entity "Xaddr" for hierarchy "Xaddr:GameXaddr" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 62
-Warning (10230): Verilog HDL assignment warning at Xaddr.v(24): truncated value with size 9 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Xaddr.v Line: 24
-Info (12128): Elaborating entity "Yaddr" for hierarchy "Yaddr:GameYaddr" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 71
-Warning (10230): Verilog HDL assignment warning at Yaddr.v(24): truncated value with size 32 to match size of target (9) File: C:/Users/Lupo/Documents/GitHub/Pong/Yaddr.v Line: 24
-Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:GameClock" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 80
-Info (12128): Elaborating entity "Ball" for hierarchy "Ball:GameBall" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 102
-Warning (10230): Verilog HDL assignment warning at Ball.v(24): truncated value with size 32 to match size of target (9) File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 24
-Warning (10230): Verilog HDL assignment warning at Ball.v(25): truncated value with size 32 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 25
-Warning (10230): Verilog HDL assignment warning at Ball.v(55): truncated value with size 32 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 55
-Warning (10230): Verilog HDL assignment warning at Ball.v(59): truncated value with size 32 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 59
-Warning (10230): Verilog HDL assignment warning at Ball.v(65): truncated value with size 32 to match size of target (9) File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 65
-Warning (10230): Verilog HDL assignment warning at Ball.v(69): truncated value with size 32 to match size of target (9) File: C:/Users/Lupo/Documents/GitHub/Pong/Ball.v Line: 69
-Info (12128): Elaborating entity "Paddles" for hierarchy "Paddles:GamePaddles" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 113
-Warning (10230): Verilog HDL assignment warning at Paddles.v(24): truncated value with size 9 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Paddles.v Line: 24
-Warning (10230): Verilog HDL assignment warning at Paddles.v(25): truncated value with size 9 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Paddles.v Line: 25
-Warning (10230): Verilog HDL assignment warning at Paddles.v(31): truncated value with size 9 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Paddles.v Line: 31
-Warning (10230): Verilog HDL assignment warning at Paddles.v(32): truncated value with size 9 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Paddles.v Line: 32
-Info (12128): Elaborating entity "Graphics" for hierarchy "Graphics:GameGraphics" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 125
+Info (12128): Elaborating entity "LT24Display" for hierarchy "LT24Display:Display" File: E:/Documents/GitHub/Pong/Pong.v Line: 51
+Info (12128): Elaborating entity "ResetSynchroniser" for hierarchy "LT24Display:Display|ResetSynchroniser:resetGen" File: E:/Documents/GitHub/Pong/LT24Display.v Line: 157
+Info (12128): Elaborating entity "LT24InitialData" for hierarchy "LT24Display:Display|LT24InitialData:initDataRom" File: E:/Documents/GitHub/Pong/LT24Display.v Line: 174
+Info (12128): Elaborating entity "LT24DisplayInterface" for hierarchy "LT24Display:Display|LT24DisplayInterface:LT24Interface" File: E:/Documents/GitHub/Pong/LT24Display.v Line: 392
+Info (12128): Elaborating entity "Xaddr" for hierarchy "Xaddr:GameXaddr" File: E:/Documents/GitHub/Pong/Pong.v Line: 58
+Warning (10230): Verilog HDL assignment warning at Xaddr.v(24): truncated value with size 9 to match size of target (8) File: E:/Documents/GitHub/Pong/Xaddr.v Line: 24
+Info (12128): Elaborating entity "Yaddr" for hierarchy "Yaddr:GameYaddr" File: E:/Documents/GitHub/Pong/Pong.v Line: 67
+Warning (10230): Verilog HDL assignment warning at Yaddr.v(24): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Yaddr.v Line: 24
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:GameClock" File: E:/Documents/GitHub/Pong/Pong.v Line: 76
+Info (12128): Elaborating entity "Ball" for hierarchy "Ball:GameBall" File: E:/Documents/GitHub/Pong/Pong.v Line: 98
+Warning (10230): Verilog HDL assignment warning at Ball.v(24): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 24
+Warning (10230): Verilog HDL assignment warning at Ball.v(25): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 25
+Warning (10230): Verilog HDL assignment warning at Ball.v(55): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 55
+Warning (10230): Verilog HDL assignment warning at Ball.v(59): truncated value with size 32 to match size of target (8) File: E:/Documents/GitHub/Pong/Ball.v Line: 59
+Warning (10230): Verilog HDL assignment warning at Ball.v(65): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 65
+Warning (10230): Verilog HDL assignment warning at Ball.v(69): truncated value with size 32 to match size of target (9) File: E:/Documents/GitHub/Pong/Ball.v Line: 69
+Info (12128): Elaborating entity "Paddles" for hierarchy "Paddles:GamePaddles" File: E:/Documents/GitHub/Pong/Pong.v Line: 109
+Warning (10230): Verilog HDL assignment warning at Paddles.v(24): truncated value with size 9 to match size of target (8) File: E:/Documents/GitHub/Pong/Paddles.v Line: 24
+Warning (10230): Verilog HDL assignment warning at Paddles.v(25): truncated value with size 9 to match size of target (8) File: E:/Documents/GitHub/Pong/Paddles.v Line: 25
+Warning (10230): Verilog HDL assignment warning at Paddles.v(31): truncated value with size 9 to match size of target (8) File: E:/Documents/GitHub/Pong/Paddles.v Line: 31
+Warning (10230): Verilog HDL assignment warning at Paddles.v(32): truncated value with size 9 to match size of target (8) File: E:/Documents/GitHub/Pong/Paddles.v Line: 32
+Info (12128): Elaborating entity "Graphics" for hierarchy "Graphics:GameGraphics" File: E:/Documents/GitHub/Pong/Pong.v Line: 121
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "LT24Display:Display|LT24InitialData:initDataRom|ROM" is uninferred due to inappropriate RAM size File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 540
+    Info (276004): RAM logic "LT24Display:Display|LT24InitialData:initDataRom|ROM" is uninferred due to inappropriate RAM size File: E:/Documents/GitHub/Pong/LT24Display.v Line: 540
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LT24Rd_n" is stuck at VCC File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 22
-    Warning (13410): Pin "LT24CS_n" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 23
-    Warning (13410): Pin "LT24LCDOn" is stuck at VCC File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 28
+    Warning (13410): Pin "LT24Rd_n" is stuck at VCC File: E:/Documents/GitHub/Pong/Pong.v Line: 18
+    Warning (13410): Pin "LT24CS_n" is stuck at GND File: E:/Documents/GitHub/Pong/Pong.v Line: 19
+    Warning (13410): Pin "LT24LCDOn" is stuck at VCC File: E:/Documents/GitHub/Pong/Pong.v Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 489 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 506 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 460 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Thu May 02 16:59:20 2019
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:30
+    Info (21061): Implemented 477 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Thu May 02 22:24:33 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 

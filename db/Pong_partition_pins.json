@@ -92,19 +92,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "player_1_up",
-					"strict" : false
-				},
-				{
-					"name" : "player_1_down",
-					"strict" : false
-				},
-				{
 					"name" : "player_2_up",
 					"strict" : false
 				},
 				{
 					"name" : "player_2_down",
+					"strict" : false
+				},
+				{
+					"name" : "player_1_up",
+					"strict" : false
+				},
+				{
+					"name" : "player_1_down",
 					"strict" : false
 				}
 			]

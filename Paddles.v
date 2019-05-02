@@ -1,6 +1,6 @@
 module Paddles #(
 
-    parameter paddle_width = 9'd4,    //Width of paddles
+    parameter paddle_width = 9'd5,    //Width of paddles
     parameter paddle_length = 9'd40,    //Length of paddles
 	 parameter paddleU_ini=9'd100,
 	 parameter paddleD_ini=9'd100     //Starting position (middle)
