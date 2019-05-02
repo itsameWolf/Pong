@@ -8,95 +8,49 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Lupo/Documents/GitHub/Pong/simulation
-vBinaryToBCD
-Z1 !s110 1555067428
+vGraphics
+Z1 !s110 1556807380
 !i10b 1
-!s100 hLXVV^H1=>IC?Sje_3A>U3
-I3i8RAzBRM6[;G];V20lVC3
+!s100 n];3`IEeIX`^ZPh6Zd]4O0
+IH6LzTDjl5b1kA=2TNNY9N1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1554991262
-8C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v
-FC:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v
+w1556807038
+8C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v
+FC:/Users/Lupo/Documents/GitHub/Pong/Graphics.v
 L0 1
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1555067428.000000
-!s107 C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong|C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v|
+Z4 !s108 1556807380.000000
+!s107 C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong|C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v|
 !i113 1
 Z5 o-vlog01compat -work work
-Z6 !s92 -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong
-Z7 tCvgOpt 0
-n@binary@to@b@c@d
-vDisplay7Segment
+!s92 -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong
+Z6 tCvgOpt 0
+n@graphics
+vGraphics_tb
 R1
 !i10b 1
-!s100 jMUCIaVo?9JmL>cnd]me@3
-I1EGBdg9`4<i:fiX:OVhmf1
+!s100 O6b6aRL]gaVh0[k[mZhJi2
+IVZh:RgeQU2`lIUP1EV_^h2
 R2
 R0
-w1555065833
-8C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v
-FC:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v
-L0 1
-R3
-r1
-!s85 0
-31
-R4
-!s107 C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong|C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v|
-!i113 1
-R5
-R6
-R7
-n@display7@segment
-vScoreboard
-Z8 !s110 1555067429
-!i10b 1
-!s100 >:ThS=LeX_Am?Zh5QnfBB1
-IYXOBd9VT<egMYKn1ZL[kF1
-R2
-R0
-w1555067381
-8C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v
-FC:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v
-L0 1
-R3
-r1
-!s85 0
-31
-Z9 !s108 1555067429.000000
-!s107 C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong|C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v|
-!i113 1
-R5
-R6
-R7
-n@scoreboard
-vScoreboard_tb
-R8
-!i10b 1
-!s100 BmUHkDNM8B;1]SCANUGM12
-IB]3W18]1zSe5`kHNEYMl30
-R2
-R0
-w1555066964
-8C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v
-FC:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v
+w1556807156
+8C:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v
+FC:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v
 L0 3
 R3
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation|C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v|
+R4
+!s107 C:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation|C:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v|
 !i113 1
 R5
 !s92 -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation
-R7
-n@scoreboard_tb
+R6
+n@graphics_tb

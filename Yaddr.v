@@ -1,5 +1,5 @@
 module Yaddr#(
-	parameter Y_MAX = 240
+	parameter Y_MAX = 320
 	)(
 	input wire			clock,
 	input wire 			reset,
@@ -13,14 +13,18 @@ module Yaddr#(
 			
 			y_addr <= 0;
 		
-		end else if (enable && (y_addr < Y_MAX)) begin
-		
-			y_addr <= y_addr + 1;
+		end else if (enable) begin
 			
-		end else begin 
-		
-			y_addr <= 0;
-		
+			if (y_addr >= Y_MAX) begin
+				
+				y_addr <= 0;
+				
+			end else begin 
+				
+				y_addr <= y_addr + 1;
+				
+			end
+			
 		end
 		
 	end

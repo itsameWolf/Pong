@@ -57,12 +57,12 @@ module Pong #(
 	Xaddr GameXaddr ( 
 		.clock	(clock),
 		.reset	(resetApp),
-		.enable	(pixelWrite),
-		.x_addr	(x_addr),
+		.enable	(pixelReady),
+		.x_addr	(x_addr)
 		);
-		
-		wire YaddrEN = pixelReady && (x_addr == (LCD_WIDTH-1));
-		
+	
+	wire YaddrEN = pixelReady && (x_addr == (LCD_WIDTH-1));
+	
 	Yaddr GameYaddr (
 		.clock	(clock),
 		.reset	(resetApp),
@@ -71,7 +71,7 @@ module Pong #(
 		);
 	
 	ClockDivider #(
-		.CLOCK_IN		(50000000),
+		.CLOCK_IN	(50000000),
 		.CLOCK_OUT	(30)
 		) GameClock (
 		.clk_in		(clock),
@@ -80,27 +80,29 @@ module Pong #(
 		);
 	
 	wire 			pixel_clock, game_clock;
-	wire [8:0]	paddle_1_y, paddle_2_y;
-	wire [8:0]	ball_x, ball_y;
+	wire [7:0]	paddle_1_y, paddle_2_y;
+	wire [7:0]	ball_x;
+	wire [8:0]	ball_y;
 	
-	wire pixelReady, pixelWrite;
-	wire [15:0]	pixelData;
+	wire			pixelReady;
+	reg 			pixelWrite;
+	wire [15:0]	graphicOut;
+	reg  [15:0]	pixelData;
 	
 	wire [8:0]	y_addr;
 	wire [7:0] 	x_addr;
-	wire			shift;	
 	
 	Ball GameBall (
 		.reset		(resetApp),									
 		.clock		(game_clock),							
-		.player_1_y	(paddle_1_y),						
-		.player_2_y	(paddle_2_y),						
+		.player_1_x	(paddle_1_y),						
+		.player_2_x	(paddle_2_y),						
 		.ball_y		(ball_y),			
 		.ball_x		(ball_x)
 		);
 	
 	Paddles GamePaddles (
-		.clock			(game_clock),
+		.clock			(clock),
 		.reset 			(resetApp),
 		.key3				(player_2_up),
 		.key2				(player_2_down),
@@ -119,8 +121,33 @@ module Pong #(
 		.paddle_2_y	(paddle_2_y),
 		.pixel_x		(x_addr),
 		.pixel_y		(y_addr),
-		.pixel_rgb	(pixelData),
-		.pixel_write(pixelWrite)
+		.pixel_rgb	(graphicOut)
 		);
+
+	always @ (posedge clock or posedge resetApp) begin
+	
+		if (resetApp) begin
 		
+        pixelWrite <= 1'b0;
+		  
+		end else begin
+		  
+        pixelWrite <= 1'b1;
+			
+		end
+		
+	end
+	
+	always @ (posedge clock or posedge resetApp) begin
+		if (resetApp) begin
+		
+			pixelData <= 16'b0;
+			
+		end else if (pixelReady) begin
+			
+			pixelData <= graphicOut;
+			
+		end
+	end
+	
 endmodule

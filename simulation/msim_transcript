@@ -11,55 +11,33 @@
 # Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong {C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong {C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:10:28 on Apr 12,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Lupo/Documents/GitHub/Pong" C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v 
-# -- Compiling module Display7Segment
+# Start time: 15:29:40 on May 02,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Lupo/Documents/GitHub/Pong" C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v 
+# -- Compiling module Graphics
 # 
 # Top level modules:
-# 	Display7Segment
-# End time: 12:10:28 on Apr 12,2019, Elapsed time: 0:00:00
+# 	Graphics
+# End time: 15:29:40 on May 02,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong {C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v}
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation {C:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:10:28 on Apr 12,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Lupo/Documents/GitHub/Pong" C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v 
-# -- Compiling module BinaryToBCD
+# Start time: 15:29:40 on May 02,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation" C:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v 
+# -- Compiling module Graphics_tb
 # 
 # Top level modules:
-# 	BinaryToBCD
-# End time: 12:10:29 on Apr 12,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong {C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:10:29 on Apr 12,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Lupo/Documents/GitHub/Pong" C:/Users/Lupo/Documents/GitHub/Pong/Scoreboard.v 
-# -- Compiling module Scoreboard
-# 
-# Top level modules:
-# 	Scoreboard
-# End time: 12:10:29 on Apr 12,2019, Elapsed time: 0:00:00
+# 	Graphics_tb
+# End time: 15:29:40 on May 02,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation {C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:10:29 on Apr 12,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Lupo/Documents/GitHub/Pong/simulation" C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v 
-# -- Compiling module Scoreboard_tb
-# 
-# Top level modules:
-# 	Scoreboard_tb
-# End time: 12:10:29 on Apr 12,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Scoreboard_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Scoreboard_tb 
-# Start time: 12:10:30 on Apr 12,2019
-# Loading work.Scoreboard_tb
-# Loading work.Scoreboard
-# Loading work.BinaryToBCD
-# Loading work.Display7Segment
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Graphics_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Graphics_tb 
+# Start time: 15:29:40 on May 02,2019
+# Loading work.Graphics_tb
+# Loading work.Graphics
 # 
 # do C:/Users/Lupo/Documents/GitHub/Pong/simulation/load_sim.tcl
 #
@@ -136,9 +114,9 @@
 # }
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Lupo  Hostname: LAPTOP-GMQUIOBO  ProcessID: 16676
-#           Attempting to use alternate WLF file "./wlftq178qk".
+#           Attempting to use alternate WLF file "./wlftdq96f0".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftq178qk
+#           Using alternate file: ./wlftdq96f0
 # 
 #
 # Then we can configure the units for the timeline. Lets stick to
@@ -159,9 +137,9 @@
 # ========== Simulation Starts Here ===========
 # 
 # run -all
-# ** Note: $stop    : C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v(62)
-#    Time: 10 us  Iteration: 0  Instance: /Scoreboard_tb
-# Break in Module Scoreboard_tb at C:/Users/Lupo/Documents/GitHub/Pong/simulation/Scoreborard_tb.v line 62
+# ** Note: $stop    : C:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v(68)
+#    Time: 2 us  Iteration: 0  Instance: /Graphics_tb
+# Break in Module Graphics_tb at C:/Users/Lupo/Documents/GitHub/Pong/simulation/Graphics_tb.v line 68
 # 
 # ========== Simulation Ends Here ===========
 #
@@ -172,4 +150,4 @@
 # 
 # wave zoom full
 # 0 ps
-# 10500 ns
+# 2100 ns

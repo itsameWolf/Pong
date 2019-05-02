@@ -4,323 +4,107 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "pixel_color[0]",
+					"name" : "resetApp",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_color[1]",
+					"name" : "LT24Wr_n",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_color[2]",
+					"name" : "LT24RS",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_color[3]",
+					"name" : "LT24Reset_n",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_color[4]",
+					"name" : "LT24Data[0]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_color[5]",
+					"name" : "LT24Data[1]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_color[6]",
+					"name" : "LT24Data[2]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_color[7]",
+					"name" : "LT24Data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[8]",
+					"name" : "LT24Data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[4]",
+					"name" : "LT24Data[5]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[3]",
+					"name" : "LT24Data[6]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[2]",
+					"name" : "LT24Data[7]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[1]",
+					"name" : "LT24Data[8]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[0]",
+					"name" : "LT24Data[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[2]",
+					"name" : "LT24Data[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[1]",
+					"name" : "LT24Data[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[0]",
+					"name" : "LT24Data[12]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[7]",
+					"name" : "LT24Data[13]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[6]",
+					"name" : "LT24Data[14]",
 					"strict" : false
 				},
 				{
-					"name" : "pixel_y[5]",
+					"name" : "LT24Data[15]",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[8]",
+					"name" : "clock",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[7]",
+					"name" : "globalReset",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[6]",
+					"name" : "player_1_up",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[5]",
+					"name" : "player_1_down",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[4]",
+					"name" : "player_2_up",
 					"strict" : false
 				},
 				{
-					"name" : "ball_y[3]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[2]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[1]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[0]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[8]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[7]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[6]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[5]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[4]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_y[3]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[2]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[1]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[0]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[8]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[4]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[7]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[6]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[5]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_y[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[8]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[8]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[7]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[5]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[7]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[6]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[2]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[3]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pixel_x[0]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[1]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_2_x[0]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[8]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[7]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[6]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[5]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[4]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[1]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[0]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[3]",
-					"strict" : false
-				},
-				{
-					"name" : "paddle_1_x[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ball_x[0]",
+					"name" : "player_2_down",
 					"strict" : false
 				}
 			]

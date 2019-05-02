@@ -1,9 +1,14 @@
 
-State Machine - |Scoreboard|BinaryToBCD:BCDconverter|state
-Name state.FINISHED state.CHECK_DIGIT_INDEX state.ADD state.CHECK_SHIFT_INDEX state.SHIFT state.IDLE 
-state.IDLE 0 0 0 0 0 0 
-state.SHIFT 0 0 0 0 1 1 
-state.CHECK_SHIFT_INDEX 0 0 0 1 0 1 
-state.ADD 0 0 1 0 0 1 
-state.CHECK_DIGIT_INDEX 0 1 0 0 0 1 
-state.FINISHED 1 0 0 0 0 1 
+State Machine - |Pong|LT24Display:Display|stateMachine
+Name stateMachine.IDLE_STATE stateMachine.CASET_STATE stateMachine.XHADDR_STATE stateMachine.XLADDR_STATE stateMachine.PASET_STATE stateMachine.YHADDR_STATE stateMachine.YLADDR_STATE stateMachine.WRITE_STATE stateMachine.CMD_STATE stateMachine.LOAD_STATE stateMachine.INIT_STATE 
+stateMachine.INIT_STATE 0 0 0 0 0 0 0 0 0 0 0 
+stateMachine.LOAD_STATE 0 0 0 0 0 0 0 0 0 1 1 
+stateMachine.CMD_STATE 0 0 0 0 0 0 0 0 1 0 1 
+stateMachine.WRITE_STATE 0 0 0 0 0 0 0 1 0 0 1 
+stateMachine.YLADDR_STATE 0 0 0 0 0 0 1 0 0 0 1 
+stateMachine.YHADDR_STATE 0 0 0 0 0 1 0 0 0 0 1 
+stateMachine.PASET_STATE 0 0 0 0 1 0 0 0 0 0 1 
+stateMachine.XLADDR_STATE 0 0 0 1 0 0 0 0 0 0 1 
+stateMachine.XHADDR_STATE 0 0 1 0 0 0 0 0 0 0 1 
+stateMachine.CASET_STATE 0 1 0 0 0 0 0 0 0 0 1 
+stateMachine.IDLE_STATE 1 0 0 0 0 0 0 0 0 0 1 
