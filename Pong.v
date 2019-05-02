@@ -97,17 +97,35 @@ module Pong #(
 		.ball_x		(ball_x)
 		);
 	
-	Paddles GamePaddles (
-		.clock			(game_clock),
-		.reset 			(resetApp),
-		.key3				(player_2_up),
-		.key2				(player_2_down),
-		.key1				(player_1_up),
-		.key0				(player_1_down),
-		.paddleU_pos	(paddle_2_x),
-		.paddleD_pos	(paddle_1_x)
-		);
-		
+//	Paddles GamePaddles (
+//		.clock			(game_clock),
+//		.reset 			(resetApp),
+//		.key3				(player_2_up),
+//		.key2				(player_2_down),
+//		.key1				(player_1_up),
+//		.key0				(player_1_down),
+//		.paddleU_pos	(paddle_2_x),
+//		.paddleD_pos	(paddle_1_x)
+//		);
+
+Paddle Paddle1 (
+		.reset 		(resetApp),
+		.clock		(game_clock),
+		.up			(~player_1_up),
+		.down			(~player_1_down),
+		.paddle_x	(paddle_1_x)
+	);
+
+	Paddle#(
+		.POSITION_Y (290)
+		) Paddle2 (
+		.reset 		(resetApp),
+		.clock		(game_clock),
+		.up			(~player_2_up),
+		.down			(~player_2_down),
+		.paddle_x	(paddle_2_x)
+	);
+	
 	Graphics GameGraphics (
 		.clock		(clock),
 		.reset		(resetApp),

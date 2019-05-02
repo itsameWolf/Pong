@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu May 02 22:25:17 2019
+Fitter Status : Successful - Thu May 02 23:29:10 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Pong
 Top-level Entity Name : Pong
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 260 / 32,070 ( < 1 % )
-Total registers : 220
+Logic utilization (in ALMs) : 220 / 32,070 ( < 1 % )
+Total registers : 203
 Total pins : 29 / 457 ( 6 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
