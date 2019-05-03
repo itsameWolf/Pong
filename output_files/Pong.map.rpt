@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pong
-Fri May 03 12:33:25 2019
+Fri May 03 13:57:12 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -59,7 +59,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 03 12:33:25 2019       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 03 13:57:12 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Pong                                        ;
 ; Top-level Entity Name           ; Pong                                        ;
@@ -577,7 +577,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 03 12:33:09 2019
+    Info: Processing started: Fri May 03 13:56:58 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pong -c Pong
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -637,9 +637,9 @@ Info (21057): Implemented 471 device resources after synthesis - the final resou
     Info (21059): Implemented 23 output pins
     Info (21061): Implemented 442 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Fri May 03 12:33:25 2019
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Fri May 03 13:57:12 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:30
 
 

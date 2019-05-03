@@ -91,10 +91,10 @@ set_location_assignment PIN_AG20 -to LT24Reset_n
 set_location_assignment PIN_AH17 -to LT24Wr_n
 set_location_assignment PIN_AA16 -to clock
 set_location_assignment PIN_AB12 -to globalReset
-set_location_assignment PIN_AA14 -to player_1_down
-set_location_assignment PIN_AA15 -to player_1_up
-set_location_assignment PIN_W15 -to player_2_down
-set_location_assignment PIN_Y16 -to player_2_up
+set_location_assignment PIN_AA15 -to player_1_down
+set_location_assignment PIN_AA14 -to player_1_up
+set_location_assignment PIN_Y16 -to player_2_down
+set_location_assignment PIN_W15 -to player_2_up
 set_location_assignment PIN_V16 -to resetApp
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/Ball_tb.v -section_id Ball_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/DIsplay7Segement_tb.v -section_id Display7Segment_tb
