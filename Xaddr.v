@@ -21,7 +21,7 @@ module Xaddr#(
 			
 			end else begin 
 		
-			x_addr <= x_addr + 9'd1;
+			x_addr <= x_addr + 8'd1;
 		
 			end
 			

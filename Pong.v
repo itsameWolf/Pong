@@ -68,7 +68,7 @@ module Pong #(
 	
 	ClockDivider #(
 		.CLOCK_IN	(50000000),
-		.CLOCK_OUT	(30)
+		.CLOCK_OUT	(50)
 		) GameClock (
 		.clk_in		(clock),
 		.rst			(resetApp),
@@ -91,8 +91,8 @@ module Pong #(
 	Ball GameBall (
 		.reset		(resetApp),									
 		.clock		(game_clock),							
-		.player_1_x	(paddle_1_y),						
-		.player_2_x	(paddle_2_y),						
+		.player_1_x	(paddle_1_x),						
+		.player_2_x	(paddle_2_x),						
 		.ball_y		(ball_y),			
 		.ball_x		(ball_x)
 		);
