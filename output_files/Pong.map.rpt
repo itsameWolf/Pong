@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pong
-Fri May 03 13:57:12 2019
+Mon May 06 16:16:35 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,27 +13,32 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Pong|LT24Display:Display|stateMachine
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for LT24Display:Display
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |Pong
- 15. Parameter Settings for User Entity Instance: LT24Display:Display
- 16. Parameter Settings for User Entity Instance: LT24Display:Display|LT24InitialData:initDataRom
- 17. Parameter Settings for User Entity Instance: LT24Display:Display|LT24DisplayInterface:LT24Interface
- 18. Parameter Settings for User Entity Instance: Xaddr:GameXaddr
- 19. Parameter Settings for User Entity Instance: Yaddr:GameYaddr
- 20. Parameter Settings for User Entity Instance: ClockDivider:GameClock
- 21. Parameter Settings for User Entity Instance: Ball:GameBall
- 22. Parameter Settings for User Entity Instance: Paddle:Paddle1
- 23. Parameter Settings for User Entity Instance: Paddle:Paddle2
- 24. Parameter Settings for User Entity Instance: Graphics:GameGraphics
- 25. Port Connectivity Checks: "LT24Display:Display"
- 26. Post-Synthesis Netlist Statistics for Top Partition
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
+  8. State Machine - |Pong|BinaryToBCD:converter2|state
+  9. State Machine - |Pong|BinaryToBCD:converter1|state
+ 10. State Machine - |Pong|LT24Display:Display|stateMachine
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for LT24Display:Display
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |Pong
+ 17. Parameter Settings for User Entity Instance: LT24Display:Display
+ 18. Parameter Settings for User Entity Instance: LT24Display:Display|LT24InitialData:initDataRom
+ 19. Parameter Settings for User Entity Instance: LT24Display:Display|LT24DisplayInterface:LT24Interface
+ 20. Parameter Settings for User Entity Instance: Xaddr:GameXaddr
+ 21. Parameter Settings for User Entity Instance: Yaddr:GameYaddr
+ 22. Parameter Settings for User Entity Instance: ClockDivider:GameClock
+ 23. Parameter Settings for User Entity Instance: Ball:GameBall
+ 24. Parameter Settings for User Entity Instance: Paddle:Paddle1
+ 25. Parameter Settings for User Entity Instance: Paddle:Paddle2
+ 26. Parameter Settings for User Entity Instance: Graphics:GameGraphics
+ 27. Parameter Settings for User Entity Instance: BinaryToBCD:converter1
+ 28. Parameter Settings for User Entity Instance: BinaryToBCD:converter2
+ 29. Port Connectivity Checks: "LT24Display:Display"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -59,14 +64,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 03 13:57:12 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 06 16:16:35 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Pong                                        ;
 ; Top-level Entity Name           ; Pong                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 172                                         ;
-; Total pins                      ; 29                                          ;
+; Total registers                 ; 325                                         ;
+; Total pins                      ; 67                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -179,24 +184,30 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                       ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
-; Paddle.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Paddle.v       ;         ;
-; LT24Display.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v  ;         ;
-; Ball.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Ball.v         ;         ;
-; ClockDivider.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/ClockDivider.v ;         ;
-; Pong.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Pong.v         ;         ;
-; Yaddr.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Yaddr.v        ;         ;
-; Xaddr.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Xaddr.v        ;         ;
-; Graphics.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v     ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; win.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/win.v             ;         ;
+; led.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/led.v             ;         ;
+; Paddle.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Paddle.v          ;         ;
+; LT24Display.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v     ;         ;
+; Display7Segment.v                ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Display7Segment.v ;         ;
+; Ball.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Ball.v            ;         ;
+; ClockDivider.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/ClockDivider.v    ;         ;
+; Pong.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Pong.v            ;         ;
+; BinaryToBCD.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v     ;         ;
+; Yaddr.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Yaddr.v           ;         ;
+; Xaddr.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Xaddr.v           ;         ;
+; Graphics.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v        ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -204,25 +215,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 264         ;
+; Estimate of Logic utilization (ALMs needed) ; 374         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 405         ;
+; Combinational ALUT usage for logic          ; 597         ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 118         ;
-;     -- 5 input functions                    ; 42          ;
-;     -- 4 input functions                    ; 41          ;
-;     -- <=3 input functions                  ; 204         ;
+;     -- 6 input functions                    ; 137         ;
+;     -- 5 input functions                    ; 69          ;
+;     -- 4 input functions                    ; 84          ;
+;     -- <=3 input functions                  ; 307         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 172         ;
+; Dedicated logic registers                   ; 325         ;
 ;                                             ;             ;
-; I/O pins                                    ; 29          ;
+; I/O pins                                    ; 67          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 137         ;
-; Total fan-out                               ; 2224        ;
-; Average fan-out                             ; 3.50        ;
+; Maximum fan-out                             ; 249         ;
+; Total fan-out                               ; 3462        ;
+; Average fan-out                             ; 3.28        ;
 +---------------------------------------------+-------------+
 
 
@@ -231,20 +242,58 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name          ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
-; |Pong                                      ; 405 (3)             ; 172 (4)                   ; 0                 ; 0          ; 29   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
-;    |Ball:GameBall|                         ; 96 (96)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
+; |Pong                                      ; 597 (48)            ; 325 (37)                  ; 0                 ; 0          ; 67   ; 0            ; |Pong                                                        ; Pong                 ; work         ;
+;    |Ball:GameBall|                         ; 100 (100)           ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|Ball:GameBall                                          ; Ball                 ; work         ;
+;    |BinaryToBCD:converter1|                ; 46 (46)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|BinaryToBCD:converter1                                 ; BinaryToBCD          ; work         ;
+;    |BinaryToBCD:converter2|                ; 22 (22)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|BinaryToBCD:converter2                                 ; BinaryToBCD          ; work         ;
 ;    |ClockDivider:GameClock|                ; 30 (30)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|ClockDivider:GameClock                                 ; ClockDivider         ; work         ;
-;    |Graphics:GameGraphics|                 ; 99 (99)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
+;    |Display7Segment:score1digit1|          ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Display7Segment:score1digit1                           ; Display7Segment      ; work         ;
+;    |Display7Segment:score1digit2|          ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Display7Segment:score1digit2                           ; Display7Segment      ; work         ;
+;    |Display7Segment:score2digit1|          ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Display7Segment:score2digit1                           ; Display7Segment      ; work         ;
+;    |Display7Segment:score2digit2|          ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Display7Segment:score2digit2                           ; Display7Segment      ; work         ;
+;    |Graphics:GameGraphics|                 ; 95 (95)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Graphics:GameGraphics                                  ; Graphics             ; work         ;
 ;    |LT24Display:Display|                   ; 116 (60)            ; 88 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display                                    ; LT24Display          ; work         ;
 ;       |LT24DisplayInterface:LT24Interface| ; 29 (29)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24DisplayInterface:LT24Interface ; LT24DisplayInterface ; work         ;
 ;       |LT24InitialData:initDataRom|        ; 27 (27)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|LT24InitialData:initDataRom        ; LT24InitialData      ; work         ;
 ;       |ResetSynchroniser:resetGen|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|LT24Display:Display|ResetSynchroniser:resetGen         ; ResetSynchroniser    ; work         ;
-;    |Paddle:Paddle1|                        ; 21 (21)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Paddle:Paddle1                                         ; Paddle               ; work         ;
+;    |Paddle:Paddle1|                        ; 25 (25)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Paddle:Paddle1                                         ; Paddle               ; work         ;
 ;    |Paddle:Paddle2|                        ; 21 (21)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Paddle:Paddle2                                         ; Paddle               ; work         ;
 ;    |Xaddr:GameXaddr|                       ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Xaddr:GameXaddr                                        ; Xaddr                ; work         ;
 ;    |Yaddr:GameYaddr|                       ; 10 (10)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Pong|Yaddr:GameYaddr                                        ; Yaddr                ; work         ;
+;    |led:LightShow|                         ; 33 (33)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|led:LightShow                                          ; led                  ; work         ;
+;    |win:GameScore|                         ; 14 (14)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |Pong|win:GameScore                                          ; win                  ; work         ;
 +--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Pong|BinaryToBCD:converter2|state                                                                                  ;
++-------------------------+----------------+-------------------------+-----------+-------------------------+-------------+------------+
+; Name                    ; state.FINISHED ; state.CHECK_DIGIT_INDEX ; state.ADD ; state.CHECK_SHIFT_INDEX ; state.SHIFT ; state.IDLE ;
++-------------------------+----------------+-------------------------+-----------+-------------------------+-------------+------------+
+; state.IDLE              ; 0              ; 0                       ; 0         ; 0                       ; 0           ; 0          ;
+; state.SHIFT             ; 0              ; 0                       ; 0         ; 0                       ; 1           ; 1          ;
+; state.CHECK_SHIFT_INDEX ; 0              ; 0                       ; 0         ; 1                       ; 0           ; 1          ;
+; state.ADD               ; 0              ; 0                       ; 1         ; 0                       ; 0           ; 1          ;
+; state.CHECK_DIGIT_INDEX ; 0              ; 1                       ; 0         ; 0                       ; 0           ; 1          ;
+; state.FINISHED          ; 1              ; 0                       ; 0         ; 0                       ; 0           ; 1          ;
++-------------------------+----------------+-------------------------+-----------+-------------------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Pong|BinaryToBCD:converter1|state                                                                                  ;
++-------------------------+----------------+-------------------------+-----------+-------------------------+-------------+------------+
+; Name                    ; state.FINISHED ; state.CHECK_DIGIT_INDEX ; state.ADD ; state.CHECK_SHIFT_INDEX ; state.SHIFT ; state.IDLE ;
++-------------------------+----------------+-------------------------+-----------+-------------------------+-------------+------------+
+; state.IDLE              ; 0              ; 0                       ; 0         ; 0                       ; 0           ; 0          ;
+; state.SHIFT             ; 0              ; 0                       ; 0         ; 0                       ; 1           ; 1          ;
+; state.CHECK_SHIFT_INDEX ; 0              ; 0                       ; 0         ; 1                       ; 0           ; 1          ;
+; state.ADD               ; 0              ; 0                       ; 1         ; 0                       ; 0           ; 1          ;
+; state.CHECK_DIGIT_INDEX ; 0              ; 1                       ; 0         ; 0                       ; 0           ; 1          ;
+; state.FINISHED          ; 1              ; 0                       ; 0         ; 0                       ; 0           ; 1          ;
++-------------------------+----------------+-------------------------+-----------+-------------------------+-------------+------------+
 
 
 Encoding Type:  One-Hot
@@ -267,31 +316,55 @@ Encoding Type:  One-Hot
 +---------------------------+-------------------------+--------------------------+---------------------------+---------------------------+--------------------------+---------------------------+---------------------------+--------------------------+------------------------+-------------------------+-------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                             ;
-+--------------------------------------------+---------------------------------------------------+
-; Register name                              ; Reason for Removal                                ;
-+--------------------------------------------+---------------------------------------------------+
-; LT24Display:Display|xAddrTemp[8..15]       ; Stuck at GND due to stuck port data_in            ;
-; LT24Display:Display|yAddrTemp[9..15]       ; Stuck at GND due to stuck port data_in            ;
-; Graphics:GameGraphics|pixel_rgb[11..14]    ; Merged with Graphics:GameGraphics|pixel_rgb[15]   ;
-; Graphics:GameGraphics|pixel_rgb[6..9]      ; Merged with Graphics:GameGraphics|pixel_rgb[10]   ;
-; Graphics:GameGraphics|pixel_rgb[0..4]      ; Merged with Graphics:GameGraphics|pixel_rgb[5]    ;
-; pixelData[1..5]                            ; Merged with pixelData[0]                          ;
-; pixelData[11..14]                          ; Merged with pixelData[15]                         ;
-; pixelData[6..9]                            ; Merged with pixelData[10]                         ;
-; LT24Display:Display|displayData[8,9]       ; Merged with LT24Display:Display|displayData[10]   ;
-; LT24Display:Display|displayData[12..15]    ; Merged with LT24Display:Display|displayData[11]   ;
-; LT24Display:Display|pixelDataTemp[1..5]    ; Merged with LT24Display:Display|pixelDataTemp[0]  ;
-; LT24Display:Display|pixelDataTemp[6..9]    ; Merged with LT24Display:Display|pixelDataTemp[10] ;
-; LT24Display:Display|pixelDataTemp[12..15]  ; Merged with LT24Display:Display|pixelDataTemp[11] ;
-; LT24Display:Display|stateMachine~15        ; Lost fanout                                       ;
-; LT24Display:Display|stateMachine~16        ; Lost fanout                                       ;
-; LT24Display:Display|stateMachine~17        ; Lost fanout                                       ;
-; LT24Display:Display|stateMachine~18        ; Lost fanout                                       ;
-; LT24Display:Display|stateMachine.CMD_STATE ; Stuck at GND due to stuck port data_in            ;
-; Total Number of Removed Registers = 65     ;                                                   ;
-+--------------------------------------------+---------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++------------------------------------------------+------------------------------------------------------------+
+; Register name                                  ; Reason for Removal                                         ;
++------------------------------------------------+------------------------------------------------------------+
+; LT24Display:Display|xAddrTemp[8..15]           ; Stuck at GND due to stuck port data_in                     ;
+; LT24Display:Display|yAddrTemp[9..15]           ; Stuck at GND due to stuck port data_in                     ;
+; Graphics:GameGraphics|pixel_rgb[11..14]        ; Merged with Graphics:GameGraphics|pixel_rgb[15]            ;
+; Graphics:GameGraphics|pixel_rgb[6..9]          ; Merged with Graphics:GameGraphics|pixel_rgb[10]            ;
+; Graphics:GameGraphics|pixel_rgb[0..4]          ; Merged with Graphics:GameGraphics|pixel_rgb[5]             ;
+; pixelData[11..14]                              ; Merged with pixelData[15]                                  ;
+; pixelData[6..9]                                ; Merged with pixelData[10]                                  ;
+; pixelData[0..4]                                ; Merged with pixelData[5]                                   ;
+; LT24Display:Display|displayData[8,9]           ; Merged with LT24Display:Display|displayData[10]            ;
+; LT24Display:Display|displayData[12..15]        ; Merged with LT24Display:Display|displayData[11]            ;
+; LT24Display:Display|pixelDataTemp[1..5]        ; Merged with LT24Display:Display|pixelDataTemp[0]           ;
+; LT24Display:Display|pixelDataTemp[6..9]        ; Merged with LT24Display:Display|pixelDataTemp[10]          ;
+; LT24Display:Display|pixelDataTemp[12..15]      ; Merged with LT24Display:Display|pixelDataTemp[11]          ;
+; BinaryToBCD:converter2|state~2                 ; Lost fanout                                                ;
+; BinaryToBCD:converter2|state~3                 ; Lost fanout                                                ;
+; BinaryToBCD:converter2|state~4                 ; Lost fanout                                                ;
+; BinaryToBCD:converter1|state~2                 ; Lost fanout                                                ;
+; BinaryToBCD:converter1|state~3                 ; Lost fanout                                                ;
+; BinaryToBCD:converter1|state~4                 ; Lost fanout                                                ;
+; LT24Display:Display|stateMachine~15            ; Lost fanout                                                ;
+; LT24Display:Display|stateMachine~16            ; Lost fanout                                                ;
+; LT24Display:Display|stateMachine~17            ; Lost fanout                                                ;
+; LT24Display:Display|stateMachine~18            ; Lost fanout                                                ;
+; BinaryToBCD:converter2|decimal_digit_index[0]  ; Merged with BinaryToBCD:converter1|decimal_digit_index[0]  ;
+; BinaryToBCD:converter2|decimal_digit_index[3]  ; Merged with BinaryToBCD:converter1|decimal_digit_index[3]  ;
+; BinaryToBCD:converter2|decimal_digit_index[2]  ; Merged with BinaryToBCD:converter1|decimal_digit_index[2]  ;
+; BinaryToBCD:converter2|decimal_digit_index[1]  ; Merged with BinaryToBCD:converter1|decimal_digit_index[1]  ;
+; BinaryToBCD:converter2|state.CHECK_SHIFT_INDEX ; Merged with BinaryToBCD:converter1|state.CHECK_SHIFT_INDEX ;
+; BinaryToBCD:converter2|state.CHECK_DIGIT_INDEX ; Merged with BinaryToBCD:converter1|state.CHECK_DIGIT_INDEX ;
+; BinaryToBCD:converter2|state.FINISHED          ; Merged with BinaryToBCD:converter1|state.FINISHED          ;
+; BinaryToBCD:converter2|state.IDLE              ; Merged with BinaryToBCD:converter1|state.IDLE              ;
+; BinaryToBCD:converter2|state.SHIFT             ; Merged with BinaryToBCD:converter1|state.SHIFT             ;
+; BinaryToBCD:converter2|state.ADD               ; Merged with BinaryToBCD:converter1|state.ADD               ;
+; BinaryToBCD:converter2|loop_counter[7]         ; Merged with BinaryToBCD:converter1|loop_counter[7]         ;
+; BinaryToBCD:converter2|loop_counter[4]         ; Merged with BinaryToBCD:converter1|loop_counter[4]         ;
+; BinaryToBCD:converter2|loop_counter[3]         ; Merged with BinaryToBCD:converter1|loop_counter[3]         ;
+; BinaryToBCD:converter2|loop_counter[2]         ; Merged with BinaryToBCD:converter1|loop_counter[2]         ;
+; BinaryToBCD:converter2|loop_counter[1]         ; Merged with BinaryToBCD:converter1|loop_counter[1]         ;
+; BinaryToBCD:converter2|loop_counter[5]         ; Merged with BinaryToBCD:converter1|loop_counter[5]         ;
+; BinaryToBCD:converter2|loop_counter[0]         ; Merged with BinaryToBCD:converter1|loop_counter[0]         ;
+; BinaryToBCD:converter2|loop_counter[6]         ; Merged with BinaryToBCD:converter1|loop_counter[6]         ;
+; LT24Display:Display|stateMachine.CMD_STATE     ; Stuck at GND due to stuck port data_in                     ;
+; Total Number of Removed Registers = 89         ;                                                            ;
++------------------------------------------------+------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -299,12 +372,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 172   ;
-; Number of registers using Synchronous Clear  ; 48    ;
-; Number of registers using Synchronous Load   ; 17    ;
-; Number of registers using Asynchronous Clear ; 123   ;
+; Total registers                              ; 325   ;
+; Number of registers using Synchronous Clear  ; 136   ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 151   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 99    ;
+; Number of registers using Clock Enable       ; 178   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -314,46 +387,59 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------+---------+
 ; Inverted Register                                           ; Fan out ;
 +-------------------------------------------------------------+---------+
-; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3] ; 59      ;
+; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[3] ; 60      ;
+; Display7Segment:score1digit1|N_out[6]                       ; 1       ;
+; Display7Segment:score1digit2|N_out[6]                       ; 1       ;
+; Display7Segment:score2digit1|N_out[6]                       ; 1       ;
+; Display7Segment:score2digit2|N_out[6]                       ; 1       ;
 ; LT24Display:Display|displayRegSelect                        ; 2       ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[2] ; 1       ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[1] ; 1       ;
+; ClockDivider:GameClock|clk_out                              ; 49      ;
 ; LT24Display:Display|ResetSynchroniser:resetGen|resetSync[0] ; 1       ;
-; Paddle:Paddle2|paddle_x[6]                                  ; 12      ;
-; Paddle:Paddle2|paddle_x[5]                                  ; 12      ;
-; Paddle:Paddle2|paddle_x[4]                                  ; 16      ;
-; Paddle:Paddle2|paddle_x[2]                                  ; 9       ;
-; Paddle:Paddle2|paddle_x[1]                                  ; 7       ;
-; Paddle:Paddle2|paddle_x[0]                                  ; 6       ;
-; Paddle:Paddle1|paddle_x[6]                                  ; 13      ;
-; Paddle:Paddle1|paddle_x[5]                                  ; 15      ;
-; Paddle:Paddle1|paddle_x[4]                                  ; 19      ;
-; Paddle:Paddle1|paddle_x[2]                                  ; 10      ;
+; Paddle:Paddle1|paddle_x[4]                                  ; 18      ;
+; Paddle:Paddle1|paddle_x[2]                                  ; 9       ;
 ; Paddle:Paddle1|paddle_x[1]                                  ; 8       ;
 ; Paddle:Paddle1|paddle_x[0]                                  ; 8       ;
-; ClockDivider:GameClock|clk_out                              ; 36      ;
-; Total number of inverted registers = 18                     ;         ;
+; Paddle:Paddle1|paddle_x[6]                                  ; 13      ;
+; Paddle:Paddle1|paddle_x[5]                                  ; 15      ;
+; Paddle:Paddle2|paddle_x[4]                                  ; 15      ;
+; Paddle:Paddle2|paddle_x[2]                                  ; 8       ;
+; Paddle:Paddle2|paddle_x[1]                                  ; 7       ;
+; Paddle:Paddle2|paddle_x[0]                                  ; 6       ;
+; Paddle:Paddle2|paddle_x[6]                                  ; 12      ;
+; Paddle:Paddle2|paddle_x[5]                                  ; 12      ;
+; Total number of inverted registers = 22                     ;         ;
 +-------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_x[6]             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_x[1]             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[7]          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[7]          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_y[5]             ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_y[3]             ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Pong|LT24Display:Display|displayData[10] ;
-; 14:1               ; 3 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |Pong|LT24Display:Display|displayData[4]  ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Pong|LT24Display:Display|displayData[5]  ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[1]          ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[1]          ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |Pong|LT24Display:Display|Selector17      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Pong|win:GameScore|score2[1]              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_x[0]              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_x[2]              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Pong|counter[7]                           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Pong|led:LightShow|led_loop[1]            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Pong|BinaryToBCD:converter1|binary_buf[1] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Pong|BinaryToBCD:converter2|binary_buf[2] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[3]           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[3]           ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_y[1]              ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |Pong|Ball:GameBall|ball_y[5]              ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Pong|BinaryToBCD:converter2|bcd_buf[7]    ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Pong|BinaryToBCD:converter2|bcd_buf[3]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Pong|BinaryToBCD:converter1|bcd_buf[7]    ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Pong|BinaryToBCD:converter1|bcd_buf[3]    ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Pong|LT24Display:Display|displayData[11]  ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |Pong|LT24Display:Display|displayData[7]   ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Pong|LT24Display:Display|displayData[3]   ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |Pong|Paddle:Paddle1|paddle_x[5]           ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |Pong|Paddle:Paddle2|paddle_x[2]           ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |Pong|LT24Display:Display|Selector17       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
 +--------------------------------------------+
@@ -454,8 +540,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; MAX_X          ; 11101111  ; Unsigned Binary               ;
 ; MIN_Y          ; 000011110 ; Unsigned Binary               ;
 ; MIN_X          ; 00000000  ; Unsigned Binary               ;
-; START_Y        ; 010100000 ; Unsigned Binary               ;
-; START_X        ; 01111000  ; Unsigned Binary               ;
+; START_Y        ; 010011011 ; Unsigned Binary               ;
+; START_X        ; 01110011  ; Unsigned Binary               ;
 ; PADDLE_WIDTH   ; 000000101 ; Unsigned Binary               ;
 ; PADDLE_HEIGHT  ; 00101001  ; Unsigned Binary               ;
 +----------------+-----------+-------------------------------+
@@ -514,6 +600,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BinaryToBCD:converter1 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; INPUT_LENGTH   ; 4     ; Signed Integer                             ;
+; N_DIGITS       ; 2     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BinaryToBCD:converter2 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; INPUT_LENGTH   ; 4     ; Signed Integer                             ;
+; N_DIGITS       ; 2     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------+
 ; Port Connectivity Checks: "LT24Display:Display"           ;
 +--------------+--------+----------+------------------------+
@@ -532,33 +640,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 172                         ;
-;     CLR               ; 20                          ;
+; arriav_ff             ; 325                         ;
+;     CLR               ; 48                          ;
 ;     CLR SCLR          ; 24                          ;
-;     ENA               ; 20                          ;
+;     ENA               ; 47                          ;
 ;     ENA CLR           ; 55                          ;
 ;     ENA CLR SCLR      ; 24                          ;
-;     SLD               ; 17                          ;
-;     plain             ; 12                          ;
-; arriav_lcell_comb     ; 407                         ;
-;     arith             ; 157                         ;
+;     ENA SCLR          ; 44                          ;
+;     ENA SCLR SLD      ; 8                           ;
+;     SCLR              ; 36                          ;
+;     SLD               ; 19                          ;
+;     plain             ; 20                          ;
+; arriav_lcell_comb     ; 603                         ;
+;     arith             ; 222                         ;
 ;         0 data inputs ; 3                           ;
-;         1 data inputs ; 119                         ;
+;         1 data inputs ; 184                         ;
 ;         2 data inputs ; 20                          ;
 ;         3 data inputs ; 7                           ;
 ;         4 data inputs ; 8                           ;
-;     normal            ; 250                         ;
+;     normal            ; 381                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 27                          ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 33                          ;
-;         5 data inputs ; 42                          ;
-;         6 data inputs ; 118                         ;
-; boundary_port         ; 29                          ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 51                          ;
+;         4 data inputs ; 76                          ;
+;         5 data inputs ; 69                          ;
+;         6 data inputs ; 137                         ;
+; boundary_port         ; 67                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.30                        ;
-; Average LUT depth     ; 3.40                        ;
+; Average LUT depth     ; 2.98                        ;
 +-----------------------+-----------------------------+
 
 
@@ -577,10 +688,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 03 13:56:58 2019
+    Info: Processing started: Mon May 06 16:16:19 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pong -c Pong
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file win.v
+    Info (12023): Found entity 1: win File: C:/Users/Lupo/Documents/GitHub/Pong/win.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file led.v
+    Info (12023): Found entity 1: led File: C:/Users/Lupo/Documents/GitHub/Pong/led.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file paddle.v
     Info (12023): Found entity 1: Paddle File: C:/Users/Lupo/Documents/GitHub/Pong/Paddle.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file paddles.v
@@ -609,37 +724,53 @@ Info (12021): Found 1 design units, including 1 entities, in source file xaddr.v
 Info (12021): Found 1 design units, including 1 entities, in source file graphics.v
     Info (12023): Found entity 1: Graphics File: C:/Users/Lupo/Documents/GitHub/Pong/Graphics.v Line: 1
 Info (12127): Elaborating entity "Pong" for the top level hierarchy
-Info (12128): Elaborating entity "LT24Display" for hierarchy "LT24Display:Display" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 51
+Warning (10036): Verilog HDL or VHDL warning at Pong.v(269): object "state" assigned a value but never read File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 269
+Warning (10230): Verilog HDL assignment warning at Pong.v(269): truncated value with size 2 to match size of target (1) File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 269
+Info (12128): Elaborating entity "LT24Display" for hierarchy "LT24Display:Display" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 56
 Info (12128): Elaborating entity "ResetSynchroniser" for hierarchy "LT24Display:Display|ResetSynchroniser:resetGen" File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 157
 Info (12128): Elaborating entity "LT24InitialData" for hierarchy "LT24Display:Display|LT24InitialData:initDataRom" File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 174
 Info (12128): Elaborating entity "LT24DisplayInterface" for hierarchy "LT24Display:Display|LT24DisplayInterface:LT24Interface" File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 392
-Info (12128): Elaborating entity "Xaddr" for hierarchy "Xaddr:GameXaddr" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 58
-Info (12128): Elaborating entity "Yaddr" for hierarchy "Yaddr:GameYaddr" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 67
-Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:GameClock" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 76
-Info (12128): Elaborating entity "Ball" for hierarchy "Ball:GameBall" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 98
-Info (12128): Elaborating entity "Paddle" for hierarchy "Paddle:Paddle1" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 117
+Info (12128): Elaborating entity "Xaddr" for hierarchy "Xaddr:GameXaddr" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 65
+Info (12128): Elaborating entity "Yaddr" for hierarchy "Yaddr:GameYaddr" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 74
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:GameClock" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 83
+Info (12128): Elaborating entity "Ball" for hierarchy "Ball:GameBall" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 114
+Info (12128): Elaborating entity "Paddle" for hierarchy "Paddle:Paddle1" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 123
 Warning (10230): Verilog HDL assignment warning at Paddle.v(22): truncated value with size 32 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Paddle.v Line: 22
-Info (12128): Elaborating entity "Paddle" for hierarchy "Paddle:Paddle2" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 127
+Info (12128): Elaborating entity "Paddle" for hierarchy "Paddle:Paddle2" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 133
 Warning (10230): Verilog HDL assignment warning at Paddle.v(22): truncated value with size 32 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/Paddle.v Line: 22
-Info (12128): Elaborating entity "Graphics" for hierarchy "Graphics:GameGraphics" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 139
+Info (12128): Elaborating entity "Graphics" for hierarchy "Graphics:GameGraphics" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 145
+Info (12128): Elaborating entity "win" for hierarchy "win:GameScore" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 158
+Info (12128): Elaborating entity "BinaryToBCD" for hierarchy "BinaryToBCD:converter1" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 169
+Warning (10230): Verilog HDL assignment warning at BinaryToBCD.v(72): truncated value with size 32 to match size of target (8) File: C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v Line: 72
+Warning (10230): Verilog HDL assignment warning at BinaryToBCD.v(84): truncated value with size 32 to match size of target (4) File: C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v Line: 84
+Warning (10230): Verilog HDL assignment warning at BinaryToBCD.v(102): truncated value with size 32 to match size of target (4) File: C:/Users/Lupo/Documents/GitHub/Pong/BinaryToBCD.v Line: 102
+Info (12128): Elaborating entity "Display7Segment" for hierarchy "Display7Segment:score1digit1" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 178
+Info (12128): Elaborating entity "led" for hierarchy "led:LightShow" File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 234
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "LT24Display:Display|LT24InitialData:initDataRom|ROM" is uninferred due to inappropriate RAM size File: C:/Users/Lupo/Documents/GitHub/Pong/LT24Display.v Line: 540
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LT24Rd_n" is stuck at VCC File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 18
-    Warning (13410): Pin "LT24CS_n" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 19
-    Warning (13410): Pin "LT24LCDOn" is stuck at VCC File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 24
+    Warning (13410): Pin "LT24Rd_n" is stuck at VCC File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 23
+    Warning (13410): Pin "LT24CS_n" is stuck at GND File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 24
+    Warning (13410): Pin "LT24LCDOn" is stuck at VCC File: C:/Users/Lupo/Documents/GitHub/Pong/Pong.v Line: 29
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (17049): 10 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Lupo/Documents/GitHub/Pong/output_files/Pong.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 471 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 442 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+Info (21057): Implemented 713 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 60 output pins
+    Info (21061): Implemented 646 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Fri May 03 13:57:12 2019
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Processing ended: Mon May 06 16:16:35 2019
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:32
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Lupo/Documents/GitHub/Pong/output_files/Pong.map.smsg.
 
 

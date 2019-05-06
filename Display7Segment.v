@@ -1,38 +1,34 @@
-module Display7Segment #(
-		parameter INVERT_OUTPUT = 1
-	)(
+module Display7Segment (
+		input					reset,
 		input  		[3:0] N_in,
 		input					update,
 		output reg	[6:0] N_out
 	);
 	
-	reg [3:0] number = 4'b0000;
+	always @(posedge update or posedge reset) begin
 	
-	always @(posedge update) begin
+		if (reset) begin
 		
-		number <= N_in;
+			N_out <= 7'b1000000;
 			
-		case (number)
+		end else
 		
-			4'b0000: N_out <= 7'b0111111;
-			4'b0001: N_out <= 7'b0000110;
-			4'b0010: N_out <= 7'b1011011;
-			4'b0011: N_out <= 7'b1001111;
-			4'b0100: N_out <= 7'b1100110;
-			4'b0101: N_out <= 7'b1101101;
-			4'b0110: N_out <= 7'b1111101;
-			4'b0111: N_out <= 7'b0000111;
-			4'b1000: N_out <= 7'b1111111;
-			4'b1001: N_out <= 7'b1101111;
-			default: N_out <= 7'b0111111;
+		case (N_in)
+			
+			4'b0000: N_out <= 7'b1000000;
+			4'b0001: N_out <= 7'b1111001;
+			4'b0010: N_out <= 7'b0100100;
+			4'b0011: N_out <= 7'b0110000;
+			4'b0100: N_out <= 7'b0011001;
+			4'b0101: N_out <= 7'b0010010;
+			4'b0110: N_out <= 7'b0000010;
+			4'b0111: N_out <= 7'b1111000;
+			4'b1000: N_out <= 7'b0000000;
+			4'b1001: N_out <= 7'b0010000;
+			default: N_out <= 7'b1000000;
 			
 		endcase
 		
-		if (INVERT_OUTPUT) begin
-		
-			N_out <= ~N_out;
-			
-			end
 	end
 
 endmodule 

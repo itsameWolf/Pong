@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri May 03 13:57:12 2019
+Analysis & Synthesis Status : Successful - Mon May 06 16:16:35 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Pong
 Top-level Entity Name : Pong
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 172
-Total pins : 29
+Total registers : 325
+Total pins : 67
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

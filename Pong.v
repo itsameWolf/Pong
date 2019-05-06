@@ -10,8 +10,13 @@ module Pong #(
 	input wire		player_2_up,
 	input wire		player_2_down,
 	
+	input wire 		pause,
+	
 	input wire     globalReset,
    output 		   resetApp,
+	output [13:0] 	display_score1,
+	output [13:0]	display_score2,
+	output [8:0]	leds,
 	
    // LT24 Interface
    output        LT24Wr_n,
@@ -50,6 +55,8 @@ module Pong #(
 		.LT24LCDOn   (LT24LCDOn  )
 		);
 
+	reg resetGC;
+
 	Xaddr GameXaddr ( 
 		.clock	(clock),
 		.reset	(resetApp),
@@ -71,7 +78,7 @@ module Pong #(
 		.CLOCK_OUT	(50)
 		) GameClock (
 		.clk_in		(clock),
-		.rst			(resetApp),
+		.rst			(resetGC),
 		.clk_out		(game_clock)
 		);
 	
@@ -88,27 +95,26 @@ module Pong #(
 	wire [8:0]	y_addr;
 	wire [7:0] 	x_addr;
 	
+	wire p1_scores, p2_scores, p1_wins, p2_wins;
+	wire update_score;
+	wire [3:0] score1;
+	wire [3:0] score2;
+	wire [7:0] bcd_score1;
+	wire [7:0] bcd_score2;
+	
 	Ball GameBall (
 		.reset		(resetApp),									
 		.clock		(game_clock),							
 		.player_1_x	(paddle_1_x),						
 		.player_2_x	(paddle_2_x),						
 		.ball_y		(ball_y),			
-		.ball_x		(ball_x)
+		.ball_x		(ball_x),
+		.player_1_scored	(p1_scores),
+		.player_2_scored	(p2_scores)
 		);
-	
-//	Paddles GamePaddles (
-//		.clock			(game_clock),
-//		.reset 			(resetApp),
-//		.key3				(player_2_up),
-//		.key2				(player_2_down),
-//		.key1				(player_1_up),
-//		.key0				(player_1_down),
-//		.paddleU_pos	(paddle_2_x),
-//		.paddleD_pos	(paddle_1_x)
-//		);
 
-Paddle Paddle1 (
+
+	Paddle Paddle1 (
 		.reset 		(resetApp),
 		.clock		(game_clock),
 		.up			(~player_1_up),
@@ -137,6 +143,95 @@ Paddle Paddle1 (
 		.pixel_y		(y_addr),
 		.pixel_rgb	(graphicOut)
 		);
+		
+	win GameScore(
+		.clock		(game_clock),
+		.reset		(resetApp),
+		.p1_scored	(p1_scores),
+		.p2_scored	(p2_scores),
+		.win1			(p1_wins),
+		.win2			(p2_wins),
+		.score1		(score1),
+		.score2		(score2),
+		.update_score	(update_score)
+
+	);
+	
+	BinaryToBCD #(
+		.INPUT_LENGTH		(4),
+		.N_DIGITS			(2)
+	)converter1(
+		.clock				(clock),
+		.start				(update_score),
+		.binary				(score1),
+		.bcd					(bcd_score1),
+		.completed			(conv_comp1)
+	);
+	
+	wire conv_comp1, conv_comp2;
+	
+	Display7Segment score1digit1 (
+		.reset			(resetApp),
+		.N_in				(bcd_score1 [3:0]),
+		.update			(conv_comp1),
+		.N_out			(display_score1 [6:0])
+	);
+	
+	Display7Segment score1digit2 (
+		.reset			(resetApp),
+		.N_in				(bcd_score1 [7:4]),
+		.update			(conv_comp1),
+		.N_out			(display_score1 [13:7])
+	);
+	
+	BinaryToBCD #(
+		.INPUT_LENGTH		(4),
+		.N_DIGITS			(2)
+	)converter2(
+		.clock				(clock),
+		.start				(update_score),
+		.binary				(score2),
+		.bcd					(bcd_score2),
+		.completed			(conv_comp2)
+	);
+	
+	Display7Segment score2digit1 (
+		.reset			(resetApp),
+		.N_in				(bcd_score2 [3:0]),
+		.update			(conv_comp2),
+		.N_out			(display_score2 [6:0])
+	);
+	
+	Display7Segment score2digit2 (
+		.reset			(resetApp),
+		.N_in				(bcd_score2 [7:4]),
+		.update			(conv_comp2),
+		.N_out			(display_score2 [13:7])
+	);
+	
+//	Scoreboard Scoreboard1(
+//		.clock			(clock),
+//		.reset			(resetApp),
+//		.update			(update_score),
+//		.binary			(score1),
+//		.score			(display_score1)
+//	);
+
+//	Scoreboard Scoreboard2(
+//		.clock			(clock),
+//		.reset			(resetApp),
+//		.update			(update_score),
+//		.binary			(score1),
+//		.score			(display_score2)
+//	);
+	
+	led LightShow(
+		.clock		(clock),
+		.reset		(resetApp),
+		.right		(p1_wins),
+		.left			(p2_wins),
+		.led			(leds)
+	);
 
 	always @ (posedge clock or posedge resetApp) begin
 	
@@ -162,6 +257,83 @@ Paddle Paddle1 (
 			pixelData <= graphicOut;
 			
 		end
+	end
+	
+	localparam INIT = 2'd0;
+	localparam GAME = 2'd1;
+	localparam PAUSE = 2'd2;
+	localparam WIN	= 2'd3;
+	
+	reg [31:0] counter;
+	
+	reg state = PAUSE;
+	
+	always @(posedge clock) begin 
+	
+		if (resetApp) begin 
+			
+			counter <= 32'd0;
+			
+		end else if (pause) begin 
+			
+			resetGC <= 1'b1;
+		
+		end else if ((p1_wins || p2_wins) && (counter < 32'd350000000)) begin 
+			
+			counter <= counter + 1;
+			resetGC <= 1'b1;
+			
+		end else begin
+			
+			resetGC <= 1'b0;
+			
+		end
+
+//		case (state)
+//		
+//			INIT:
+//				begin
+//					resetGC <= 1'b1;
+//					counter <= 32'd0;
+//					state <= GAME;
+//				end
+//			
+//			PAUSE:
+//				begin 
+//					if (pause) begin
+//						resetGC <= 1'b1;
+//					end else begin
+//						resetGC <= 1'b0;
+//						state <= GAME;
+//					end
+//				end
+//				
+//			GAME:
+//				begin
+//					if (~p1_wins && ~p2_wins) begin
+//						if (~pause) begin
+//							resetGC <= 1'b0;
+//						end else begin
+//							state <= PAUSE;
+//						end
+//					end else begin
+//						state <= WIN;
+//						resetGC <= 1'b1;
+//					end
+//				end
+//			
+//			WIN:
+//				begin
+//					if (counter < 32'd100000) begin
+//						counter <= counter + 1;
+//						resetGC <= 1'b1;
+//					end else begin
+//						state <= INIT;
+//
+//					end
+//				end
+//			
+//		endcase
 	end
 	
 endmodule

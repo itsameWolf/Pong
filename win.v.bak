@@ -1,0 +1,39 @@
+module win (
+    input clock,
+	 input reset,
+	 output reg win1,
+	 output reg win2,
+	 output reg score1,
+	 output reg score2
+	 );
+	
+	localparam MAX_SCORE=10;
+	localparam MAX_Y=319;
+	localparam MIN_Y=0;
+	
+		Ball GameBall (
+		.reset		(reset),									
+		.clock		(clock),													
+		.ball_y		(ball_y),
+      .SIZE       (SIZE)		
+		);
+	
+	always @ (posedge clock) begin
+	    if (reset) begin 
+		     score1 = 1'd0;
+			  score2 = 1'd0;
+			  win1 = 0;
+			  win2 = 0;
+	    end else if ((ball_y + SIZE) == MAX_Y && score1 < MAX_SCORE) begin
+		     score1 = score1 + 1'd1;
+		 end else if (score1 == MAX_SCORE) begin
+		     win1=1;
+		 end else if ((ball_y + SIZE) == MIN_Y && score2 < MAX_SCORE) begin
+		     score2 = score2 + 1'd1;
+		 end else if (score2 == MAX_SCORE) begin
+		     win2=1;
+		 end
+	end
+
+endmodule
+	 

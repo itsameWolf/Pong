@@ -52,7 +52,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Graphics_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH BinaryToBCD_tb -section_id eda_simulation
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT simulation/load_sim.tcl -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME Ball_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Ball_tb
@@ -96,14 +96,11 @@ set_location_assignment PIN_AA14 -to player_1_up
 set_location_assignment PIN_Y16 -to player_2_down
 set_location_assignment PIN_W15 -to player_2_up
 set_location_assignment PIN_V16 -to resetApp
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/Ball_tb.v -section_id Ball_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/DIsplay7Segement_tb.v -section_id Display7Segment_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/BinaryToBCD_tb.v -section_id BinaryToBCD_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/Scoreborard_tb.v -section_id Scoreboard_tb
 set_global_assignment -name EDA_TEST_BENCH_NAME Graphics_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Graphics_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Graphics_tb -section_id Graphics_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/Graphics_tb.v -section_id Graphics_tb
+set_global_assignment -name VERILOG_FILE win.v
+set_global_assignment -name VERILOG_FILE led.v
 set_global_assignment -name VERILOG_FILE Paddle.v
 set_global_assignment -name SDC_FILE Pong.sdc
 set_global_assignment -name SOURCE_FILE db/Pong.cmp.rdb
@@ -118,7 +115,50 @@ set_global_assignment -name VERILOG_FILE Scoreboard.v
 set_global_assignment -name VERILOG_FILE Yaddr.v
 set_global_assignment -name VERILOG_FILE Xaddr.v
 set_global_assignment -name VERILOG_FILE Graphics.v
+set_location_assignment PIN_AE26 -to display_score1[0]
+set_location_assignment PIN_AE27 -to display_score1[1]
+set_location_assignment PIN_AE28 -to display_score1[2]
+set_location_assignment PIN_AG27 -to display_score1[3]
+set_location_assignment PIN_AF28 -to display_score1[4]
+set_location_assignment PIN_AG28 -to display_score1[5]
+set_location_assignment PIN_AH28 -to display_score1[6]
+set_location_assignment PIN_AD27 -to display_score1[13]
+set_location_assignment PIN_AF30 -to display_score1[12]
+set_location_assignment PIN_AF29 -to display_score1[11]
+set_location_assignment PIN_AG30 -to display_score1[10]
+set_location_assignment PIN_AH30 -to display_score1[9]
+set_location_assignment PIN_AH29 -to display_score1[8]
+set_location_assignment PIN_AJ29 -to display_score1[7]
+set_location_assignment PIN_AA24 -to display_score2[0]
+set_location_assignment PIN_Y23 -to display_score2[1]
+set_location_assignment PIN_Y24 -to display_score2[2]
+set_location_assignment PIN_W22 -to display_score2[3]
+set_location_assignment PIN_W24 -to display_score2[4]
+set_location_assignment PIN_V23 -to display_score2[5]
+set_location_assignment PIN_W25 -to display_score2[6]
+set_location_assignment PIN_V25 -to display_score2[7]
+set_location_assignment PIN_AA28 -to display_score2[8]
+set_location_assignment PIN_Y27 -to display_score2[9]
+set_location_assignment PIN_AB27 -to display_score2[10]
+set_location_assignment PIN_AB26 -to display_score2[11]
+set_location_assignment PIN_AA26 -to display_score2[12]
+set_location_assignment PIN_AA25 -to display_score2[13]
+set_location_assignment PIN_W16 -to leds[0]
+set_location_assignment PIN_V17 -to leds[1]
+set_location_assignment PIN_V18 -to leds[2]
+set_location_assignment PIN_W17 -to leds[3]
+set_location_assignment PIN_W19 -to leds[4]
+set_location_assignment PIN_Y19 -to leds[5]
+set_location_assignment PIN_W20 -to leds[6]
+set_location_assignment PIN_W21 -to leds[7]
+set_location_assignment PIN_Y21 -to leds[8]
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/Ball_tb.v -section_id Ball_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/DIsplay7Segement_tb.v -section_id Display7Segment_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/BinaryToBCD_tb.v -section_id BinaryToBCD_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/Scoreborard_tb.v -section_id Scoreboard_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/Graphics_tb.v -section_id Graphics_tb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AC12 -to pause
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
