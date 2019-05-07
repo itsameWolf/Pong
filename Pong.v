@@ -1,7 +1,6 @@
 module Pong #(
-	LCD_WIDTH  = 240;
-	LCD_HEIGHT = 320;
-	MAX_SCORE = 10
+	LCD_WIDTH  = 240,
+	LCD_HEIGHT = 320
 	)(
 	input wire	clock,
 	
@@ -209,22 +208,6 @@ module Pong #(
 		.N_out			(display_score2 [13:7])
 	);
 	
-//	Scoreboard Scoreboard1(
-//		.clock			(clock),
-//		.reset			(resetApp),
-//		.update			(update_score),
-//		.binary			(score1),
-//		.score			(display_score1)
-//	);
-
-//	Scoreboard Scoreboard2(
-//		.clock			(clock),
-//		.reset			(resetApp),
-//		.update			(update_score),
-//		.binary			(score1),
-//		.score			(display_score2)
-//	);
-	
 	led LightShow(
 		.clock		(clock),
 		.reset		(resetApp),
@@ -259,14 +242,7 @@ module Pong #(
 		end
 	end
 	
-	localparam INIT = 2'd0;
-	localparam GAME = 2'd1;
-	localparam PAUSE = 2'd2;
-	localparam WIN	= 2'd3;
-	
 	reg [31:0] counter;
-	
-	reg state = PAUSE;
 	
 	always @(posedge clock) begin 
 	
@@ -288,52 +264,7 @@ module Pong #(
 			resetGC <= 1'b0;
 			
 		end
-
-//		case (state)
-//		
-//			INIT:
-//				begin
-//					resetGC <= 1'b1;
-//					counter <= 32'd0;
-//					state <= GAME;
-//				end
-//			
-//			PAUSE:
-//				begin 
-//					if (pause) begin
-//						resetGC <= 1'b1;
-//					end else begin
-//						resetGC <= 1'b0;
-//						state <= GAME;
-//					end
-//				end
-//				
-//			GAME:
-//				begin
-//					if (~p1_wins && ~p2_wins) begin
-//						if (~pause) begin
-//							resetGC <= 1'b0;
-//						end else begin
-//							state <= PAUSE;
-//						end
-//					end else begin
-//						state <= WIN;
-//						resetGC <= 1'b1;
-//					end
-//				end
-//			
-//			WIN:
-//				begin
-//					if (counter < 32'd100000) begin
-//						counter <= counter + 1;
-//						resetGC <= 1'b1;
-//					end else begin
-//						state <= INIT;
-//
-//					end
-//				end
-//			
-//		endcase
+		
 	end
 	
 endmodule
