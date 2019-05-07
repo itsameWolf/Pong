@@ -1,8 +1,8 @@
 module Display7Segment (
-		input					reset,
-		input  		[3:0] N_in,
-		input					update,
-		output reg	[6:0] N_out
+		input	   		 reset,		//module reset
+		input  	   [3:0] N_in,		//input number
+		input			 update,	//update command
+		output reg [6:0] N_out		//output signal for the 7 segment
 	);
 	
 	always @(posedge update or posedge reset) begin

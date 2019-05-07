@@ -9,6 +9,7 @@ module BinaryToBCD #(
 	output 									completed
 	);
 	
+	//define the states of the FSM
 	localparam IDLE 					= 3'b000;
 	localparam SHIFT					= 3'b001;
 	localparam CHECK_SHIFT_INDEX	= 3'b010;
@@ -16,12 +17,16 @@ module BinaryToBCD #(
 	localparam CHECK_DIGIT_INDEX	= 3'b100;
 	localparam FINISHED				= 3'b101;
 	
+	//the default state is IDLE
 	reg [2:0] state = IDLE;
 	
+	//counter to chek how many time the code has been ran
 	reg [7:0] loop_counter = 0;
 	
+	//countet keep track of which digit of the output is been worked on
 	reg [3:0] decimal_digit_index = 0;
 	
+	//buffers between the state machine and the modules inputs and outputs
 	reg [INPUT_LENGTH-1:0]	binary_buf;
 	reg 	[N_DIGITS*4-1:0]	bcd_buf;
 	reg							completed_buf;
@@ -29,7 +34,7 @@ module BinaryToBCD #(
 	always @(posedge clock) begin
 		
 		case (state)
-			
+			//wait for a start signal, the inputs are initialised
 			IDLE :
 				begin
 				
@@ -48,7 +53,8 @@ module BinaryToBCD #(
 					end
 					
 				end
-				
+			//bitshift the inputs and outp to the left, move the MSB
+			//of the input to the LSB of the output
 			SHIFT	:
 				begin
 				
@@ -58,7 +64,8 @@ module BinaryToBCD #(
 				state <= CHECK_SHIFT_INDEX;
 				
 				end
-				
+			//if all the bits of the input have been shifted to the output
+			//the conversion is finished
 			CHECK_SHIFT_INDEX :
 				begin
 				
@@ -75,7 +82,8 @@ module BinaryToBCD #(
 					end
 					
 				end
-				
+			//for each nibble of the output if it is bigger than 4
+			//add 3 to it
 			ADD :
 				begin
 				
@@ -88,7 +96,7 @@ module BinaryToBCD #(
 				state <= CHECK_DIGIT_INDEX;
 				
 				end
-				
+			//check how many decimal digit have been converted	
 			CHECK_DIGIT_INDEX:
 				begin
 				
@@ -105,7 +113,7 @@ module BinaryToBCD #(
 				end
 				
 				end
-				
+			//send a pulse to signal that the conversion is finished	
 			FINISHED :
 				begin
 				
