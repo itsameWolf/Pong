@@ -12,8 +12,8 @@ module Pong #(
 	input wire 		pause,    //Game pausing controlled by slide switch1.
 	
 	input wire     globalReset,    //Resetting the whole project controlled by slide switch2.
-        output 		   resetApp,    //
-	output [13:0] 	display_score1,
+        output 		   resetApp,    
+	output [13:0] 	display_score1,    //Show one players' scores.
 	output [13:0]	display_score2,
 	output [8:0]	leds,
 	
@@ -54,7 +54,7 @@ module Pong #(
 		.LT24LCDOn   (LT24LCDOn  )
 		);
 
-	reg resetGC;
+	reg resetGC;    //Reset game clock.
 
 	Xaddr GameXaddr ( 
 		.clock	(clock),
