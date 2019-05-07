@@ -11,7 +11,7 @@ module Pong #(
 	
 	input wire 		pause,    //Game pausing controlled by slide switch1.
 	
-	input wire     globalReset,    //Resetting the whole project controlled by slide switch2.
+	input wire     globalReset,    //Resetting the whole project controlled by slide switch0.
         output 		   resetApp,    
 	output [13:0] 	display_score1,    //Show one players' scores.
 	output [13:0]	display_score2,
@@ -27,6 +27,7 @@ module Pong #(
    output        LT24LCDOn
 	);
 	
+	//Initialize LT24 display
 	LT24Display #(
 		.WIDTH       (LCD_WIDTH  ),
 		.HEIGHT      (LCD_HEIGHT ),
