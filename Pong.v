@@ -15,7 +15,7 @@ module Pong #(
         output 		   resetApp,    
 	output [13:0] 	display_score1,    //Show one players' scores.
 	output [13:0]	display_score2,
-	output [8:0]	leds,
+	output [8:0]	leds,    //Leds.
 	
    // LT24 Interface
    output        LT24Wr_n,
@@ -83,25 +83,26 @@ module Pong #(
 		);
 	
 	wire 	        game_clock;
-	wire [7:0]	paddle_1_x, paddle_2_x;
-	wire [7:0]	ball_x;
-	wire [8:0]	ball_y;
+	wire [7:0]	paddle_1_x, paddle_2_x;    //Paddles' positions.
+	wire [7:0]	ball_x;    //Ball's horizontal position.
+	wire [8:0]	ball_y;    //Ball's vertical position.
 	
-	wire			pixelReady;
-	reg 			pixelWrite;
-	wire [15:0]	graphicOut;
-	reg  [15:0]	pixelData;
+	wire		pixelReady;    //Signal for triggering pixel drawing.
+	reg 		pixelWrite;    //Write pixel.
+	wire [15:0]	graphicOut;    //Draw grapphics.
+	reg  [15:0]	pixelData;    
 	
 	wire [8:0]	y_addr;
 	wire [7:0] 	x_addr;
 	
-	wire p1_scores, p2_scores, p1_wins, p2_wins;
+	wire p1_scores, p2_scores, p1_wins, p2_wins;    //Signals for triggering score counter and leds.
 	wire update_score;
-	wire [3:0] score1;
+	wire [3:0] score1;    //Players' scores in binary.
 	wire [3:0] score2;
-	wire [7:0] bcd_score1;
-	wire [7:0] bcd_score2;
+	wire [7:0] bcd_score1;    //Player's scores for showing on 7-segment digits.
+	wire [7:0] bcd_score2;    
 	
+	//Ball moving control
 	Ball GameBall (
 		.reset		(resetApp),									
 		.clock		(game_clock),							
@@ -113,7 +114,7 @@ module Pong #(
 		.player_2_scored	(p2_scores)
 		);
 
-
+        //Paddles moving control
 	Paddle Paddle1 (
 		.reset 		(resetApp),
 		.clock		(game_clock),
@@ -121,7 +122,8 @@ module Pong #(
 		.down			(~player_1_down),
 		.paddle_x	(paddle_1_x)
 	);
-
+        
+	//Paddle2 controlling
 	Paddle#(
 		.POSITION_Y (290)
 		) Paddle2 (
@@ -132,6 +134,7 @@ module Pong #(
 		.paddle_x	(paddle_2_x)
 	);
 	
+	//Draw the patterns of two paddles and ball in different colours.
 	Graphics GameGraphics (
 		.clock		(clock),
 		.reset		(resetApp),
@@ -143,7 +146,8 @@ module Pong #(
 		.pixel_y		(y_addr),
 		.pixel_rgb	(graphicOut)
 		);
-		
+	
+	//Calculate player's scores and decide if any player wins.
 	win GameScore(
 		.clock		(game_clock),
 		.reset		(resetApp),
@@ -157,6 +161,7 @@ module Pong #(
 
 	);
 	
+	//Binary to BCD converter.
 	BinaryToBCD #(
 		.INPUT_LENGTH		(4),
 		.N_DIGITS			(2)
@@ -170,6 +175,7 @@ module Pong #(
 	
 	wire conv_comp1, conv_comp2;
 	
+	//Setup 7-segment digits for showing scores.
 	Display7Segment score1digit1 (
 		.reset			(resetApp),
 		.N_in				(bcd_score1 [3:0]),
@@ -209,6 +215,7 @@ module Pong #(
 		.N_out			(display_score2 [13:7])
 	);
 	
+	//Blink when player wins.
 	led LightShow(
 		.clock		(clock),
 		.reset		(resetApp),
@@ -217,9 +224,10 @@ module Pong #(
 		.led			(leds)
 	);
 
+	
 	always @ (posedge clock or posedge resetApp) begin
 	
-		if (resetApp) begin
+		if (resetApp) begin    //Clear the LT24 display
 		
         pixelWrite <= 1'b0;
 		  
@@ -234,7 +242,7 @@ module Pong #(
 	always @ (posedge clock or posedge resetApp) begin
 		if (resetApp) begin
 		
-			pixelData <= 16'b0;
+			pixelData <= 16'b0;    //Clear patterns on the display
 			
 		end else if (pixelReady) begin
 			
@@ -247,7 +255,7 @@ module Pong #(
 	
 	always @(posedge clock) begin 
 	
-		if (resetApp) begin 
+		if (resetApp) begin    //Clear time counter.
 			
 			counter <= 32'd0;
 			
