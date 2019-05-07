@@ -7,12 +7,12 @@ module Pong #(
 	input wire		player_1_up,
 	input wire		player_1_down,
 	input wire		player_2_up,
-	input wire		player_2_down,
+	input wire		player_2_down,    //4 buttons for controlling paddles moving.
 	
-	input wire 		pause,
+	input wire 		pause,    //A slide switch for game pause.
 	
 	input wire     globalReset,
-   output 		   resetApp,
+        output 		   resetApp,
 	output [13:0] 	display_score1,
 	output [13:0]	display_score2,
 	output [8:0]	leds,
@@ -81,7 +81,7 @@ module Pong #(
 		.clk_out		(game_clock)
 		);
 	
-	wire 			game_clock;
+	wire 	        game_clock;
 	wire [7:0]	paddle_1_x, paddle_2_x;
 	wire [7:0]	ball_x;
 	wire [8:0]	ball_y;
