@@ -7,12 +7,12 @@ module Pong #(
 	input wire		player_1_up,
 	input wire		player_1_down,
 	input wire		player_2_up,
-	input wire		player_2_down,    //4 buttons for controlling paddles moving.
+	input wire		player_2_down,    //Paddles moving controlled by 4 buttons.
 	
-	input wire 		pause,    //A slide switch for game pause.
+	input wire 		pause,    //Game pausing controlled by slide switch1.
 	
-	input wire     globalReset,
-        output 		   resetApp,
+	input wire     globalReset,    //Resetting the whole project controlled by slide switch2.
+        output 		   resetApp,    //
 	output [13:0] 	display_score1,
 	output [13:0]	display_score2,
 	output [8:0]	leds,
@@ -250,11 +250,11 @@ module Pong #(
 			
 			counter <= 32'd0;
 			
-		end else if (pause) begin 
+		end else if (pause) begin    //Stop game clock when pause. 
 			
 			resetGC <= 1'b1;
 		
-		end else if ((p1_wins || p2_wins) && (counter < 32'd350000000)) begin 
+		end else if ((p1_wins || p2_wins) && (counter < 32'd350000000)) begin    //Wait about 7 seconds when a player wins, then continue to play
 			
 			counter <= counter + 1;
 			resetGC <= 1'b1;
